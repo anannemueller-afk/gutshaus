@@ -487,12 +487,95 @@ nav.toc.stuck a:hover{color:var(--wine)}
 .facts div:nth-child(2){border-right:0}
 .facts dt{margin-bottom:4px}
 @media (max-width:860px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Produktionspartner Berlintapete */
+.partner{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px clamp(32px,5vw,80px);align-items:end;padding-block:clamp(56px,7vw,96px);border-bottom:2px solid var(--rule)}
+.p-label{margin:0 0 22px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.p-logo{display:block;width:min(100%,520px);height:auto}
+.p-text{margin:22px 0 14px;max-width:40ch;font-size:1.05rem;font-weight:300}
+.p-web{display:inline-flex;gap:8px;align-items:center;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--fg);text-decoration:none;border-bottom:1px solid var(--fg);padding-bottom:2px}
+.p-web:hover{color:var(--wine);border-color:var(--wine)}
+.p-contact{display:grid;gap:0;font-size:15px;font-weight:300}
+.p-contact > div{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:12px;padding:12px 0;border-top:1px solid var(--hair)}
+.p-contact > div:last-child{border-bottom:1px solid var(--hair)}
+.p-k{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.p-v{line-height:1.5;overflow-wrap:anywhere}
+.sel{user-select:all;font-variant-numeric:tabular-nums}
+.p-copy{margin-left:8px;border:1px solid var(--fg);background:none;color:var(--fg);font:500 10.5px var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;cursor:pointer;vertical-align:1px}
+.p-copy:hover{background:var(--fg);color:var(--bg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .p-logo{filter:invert(1)}}
+:root[data-theme="dark"] .p-logo{filter:invert(1)}
+@media (max-width:860px){.partner{grid-template-columns:minmax(0,1fr)}}
+
+/* Schmaler Header mit Logo, Kontakt im Footer */
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-block:12px}
+.h-logo{display:block;line-height:0}
+.h-logo img{height:26px;width:auto;display:block}
+.h-proj{font-weight:500;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg)}
+footer{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.f-credits,.f-contact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.f-contact{padding-top:22px;border-top:1px solid var(--hair);color:var(--fg);font-weight:300}
+.f-contact b,.f-credits b{display:block}
+.f-contact .p-copy{margin:6px 0 0}
+.f-contact .p-web{font-size:11px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .h-logo img{filter:invert(1)}}
+:root[data-theme="dark"] .h-logo img{filter:invert(1)}
+@media (max-width:860px){.f-credits,.f-contact{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.h-logo img{height:20px}.h-proj{font-size:10px}}
+
+/* Mehr Luft zwischen Header und Foto */
+header.top{padding-block:18px}
+.lead{margin-top:clamp(24px,3.5vw,48px)}
+
+.f-link{color:inherit;text-decoration:none;border-bottom:1px solid var(--hair);transition:color .2s,border-color .2s}
+.f-link:hover{color:var(--wine);border-bottom-color:var(--wine)}
+
+header.top{border-bottom:1px solid var(--rule)}
+.h-k{color:var(--muted);margin-right:2px}
+
+.f-contact .f-name{display:block;margin-top:6px;color:var(--muted);font-size:12px}
+.f-contact .f-name:first-of-type{margin-top:0}
+.f-contact a.f-link{display:inline-block;overflow-wrap:anywhere}
+
+/* 3D-Raum */
+.room3d{margin-top:40px;display:grid;gap:14px}
+.r3-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:10px 32px;border-top:2px solid var(--rule);padding-top:16px}
+.r3-head .cw-label{font-family:"Roboto Mono",ui-monospace,Menlo,monospace;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.r3-title{margin:6px 0 0;font-family:var(--f-display);font-weight:300;font-size:clamp(1.6rem,2.8vw,2.4rem);letter-spacing:-.02em;line-height:1.05;text-transform:none;color:var(--fg)}
+.r3-title span{font-style:italic;color:var(--wine)}
+.r3-hint{margin:0;max-width:46ch;font-size:13px;color:var(--muted)}
+.r3-stage{position:relative;width:100%;aspect-ratio:16/9;max-height:78vh;background:#d9d5cc;overflow:hidden;cursor:grab}
+.r3-stage:active{cursor:grabbing}
+.r3-stage canvas{display:block}
+.r3-stage canvas:focus-visible{outline:2px solid var(--wine);outline-offset:-2px}
+.r3-fail{position:absolute;inset:0;display:grid;place-items:center;margin:0;color:var(--muted);font-size:14px}
+.r3-ctrl{display:flex;flex-wrap:wrap;gap:0;align-items:center}
+.r3-ctrl button{border:1px solid var(--fg);margin-right:-1px;background:none;color:var(--fg);font:500 12px var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:9px 14px;cursor:pointer}
+.r3-ctrl button:hover{background:var(--fg);color:var(--bg)}
+.r3-ctrl #r3Auto{background:var(--wine);border-color:var(--wine);color:var(--on-wine)}
+.r3-sep{width:16px}
+.r3-note{margin:0}
+@media (max-width:640px){.r3-stage{aspect-ratio:4/5}.r3-ctrl button{padding:8px 10px;font-size:11px}}
+
+/* 360°-Drehrad */
+.r3-dial{position:absolute;left:50%;top:50%;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;background:rgba(233,230,223,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);cursor:grab;touch-action:none;transition:background .2s,transform .2s;z-index:2;user-select:none;-webkit-user-select:none}
+.r3-stage{user-select:none;-webkit-user-select:none}
+.r3-dial:hover{background:rgba(233,230,223,.8);transform:scale(1.04)}
+.r3-dial.on{cursor:grabbing;background:rgba(233,230,223,.88)}
+.r3-dial:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+.r3-dial svg{width:100%;height:100%;display:block;overflow:visible}
+.r3-dial .d-ring{fill:none;stroke:#111;stroke-width:1.5;stroke-dasharray:2 4}
+.r3-dial .d-arc{fill:none;stroke:#6e1f2e;stroke-width:2.5;stroke-linecap:round}
+.r3-dial .d-tip{fill:#6e1f2e}
+.r3-dial .d-ind circle{fill:#6e1f2e}
+.r3-dial text{font:500 20px "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-.02em;fill:#111}
+@media (max-width:640px){.r3-dial{width:88px;height:88px;margin:-44px 0 0 -44px}}
 </style>
 
 <div class="wrap">
 <header class="top">
-  <span>Gutshaus Hohenschönhausen · Hauptstraße 44 · 13055 Berlin</span>
-  <span>Raum 104 · Gastraum · Wandbild</span>
+  <a class="h-logo" href="https://www.berlintapete.de" target="_blank" rel="noopener" aria-label="Berlintapete – Wallpaper on Demand, Website öffnen"><img src="img/berlintapete-logo.png" alt="Berlintapete – Wallpaper on Demand" width="813" height="160"></a>
+  <span class="h-proj"><span class="h-k">Projekt:</span> Gutshaus Hohenschönhausen · Raum 104 · Wand- und Deckenbild</span>
 </header>
 
 <figure class="lead">
@@ -640,6 +723,20 @@ nav.toc.stuck a:hover{color:var(--wine)}
       <button class="cw-next" type="button" id="cwNext">Nächste <span aria-hidden="true">→</span></button>
     </div>
 
+    <section class="room3d" id="room3d" aria-labelledby="r3Title">
+      <div class="r3-head">
+        <div><span class="cw-label">Raum 104 in 3D · 360°</span><h3 id="r3Title" class="r3-title">Im Raum umsehen: <span id="r3Name">türkis-rot</span></h3></div>
+        <p class="r3-hint">360°-Rad in der Mitte drehen oder im Bild ziehen · Mausrad oder zwei Finger zum Zoomen · Farbfeld oder Farbschieber oben wählen, der Raum färbt sich mit.</p>
+      </div>
+      <div class="r3-stage" id="r3Stage"></div>
+      <div class="r3-ctrl" role="group" aria-label="Blickrichtung">
+        <button type="button" id="r3Auto" aria-pressed="true">Rundumblick stoppen</button>
+        <span class="r3-sep" aria-hidden="true"></span>
+        <button type="button" data-r3view="b">Wand B</button><button type="button" data-r3view="c">Wand C</button><button type="button" data-r3view="d">Wand D</button><button type="button" data-r3view="decke">Decke</button>
+      </div>
+      <p class="fine r3-note">Vereinfachtes Modell nach H44-715: Wände und Vouten als ebene Flächen, Wand C mit Laibungen leicht gestaucht, zu R102 offen (einfarbig dargestellt). Parkett nach Grundriss und Detail H44-613 angenähert.</p>
+    </section>
+
     <div class="sheets" role="tablist" aria-label="Planblätter">
       <button role="tab" id="tab1" aria-controls="blatt1" aria-selected="true"><i>1</i><span><b>Gesamtabwicklung</b><em>M 1:25</em></span></button>
       <button role="tab" id="tab2" aria-controls="blatt2" aria-selected="false" tabindex="-1"><i>2</i><span><b>Wände und Decke</b><em>Ansicht von innen</em></span></button>
@@ -749,14 +846,24 @@ nav.toc.stuck a:hover{color:var(--wine)}
   </div>
 </section>
 
+
 <footer>
-  <div><b>Bauherrin</b>NEUES BERLIN eG</div>
-  <div><b>Architektur</b>Stolzenberg Architekten</div>
-  <div><b>Restaurierungsplanung</b>ProDenkmal</div>
-  <div><b>Wand- und Deckenbild / Produktion</b>Berlintapete</div>
+  <div class="f-credits">
+    <div><b>Bauherrin</b>NEUES BERLIN eG</div>
+    <div><b>Architektur</b>Stolzenberg Architekten</div>
+    <div><b>Restaurierungsplanung</b>ProDenkmal</div>
+    <div><b>Wand- und Deckenbild / Produktion</b>Berlintapete GmbH</div>
+  </div>
+  <div class="f-contact">
+    <div><b>Berlintapete GmbH</b>Ackerstraße 6/7<br>10115 Berlin</div>
+    <div><b>Telefon</b><a class="f-link sel" href="tel:+493044042053">+49 (0)30 440 420 53</a><br><a class="f-link sel" href="tel:+4917623550230">+49 (0)176 235 502 30</a></div>
+    <div><b>E-Mail</b><span class="f-name">Aram Radomski</span><a class="f-link sel" href="mailto:radomski@berlintapete.de">radomski@berlintapete.de</a><span class="f-name">Anne Müller</span><a class="f-link sel" href="mailto:hello@berlintapete.com">hello@berlintapete.com</a></div>
+    <div><b>Web</b><a class="p-web" href="https://www.berlintapete.de" target="_blank" rel="noopener">www.berlintapete.de <span aria-hidden="true">↗</span></a></div>
+  </div>
 </footer>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 // Farbwelten aus dem Entwurf (Grund, Äste, Blütenkörper, Innenwolke, Kontur hell, Akzent)
 const ways=[
@@ -880,6 +987,7 @@ const ways=[
   }
   function setCw(k,fromMixer){
     cw=k; window.__mix=null;
+    window.__room3d&&window.__room3d.set({cw:k});
     if(!fromMixer && window.__mixSync) window.__mixSync(k);
     const cc=document.getElementById('cwCount'); if(cc) cc.textContent=String(ways.findIndex(w=>w.f===k)+1).padStart(2,'0')+' / 06';
     chips.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cw===cw));
@@ -1001,6 +1109,12 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
   inp.style.setProperty('--track','linear-gradient(90deg,'+PAL.map((p,i)=>p[0]+' '+(i*20)+'%').join(',')+')');
   document.getElementById('mxTicks').innerHTML=ways.map(w=>'<span>'+w.n+'</span>').join('');
   const cache={};
+  window.__mixCanvas=async function(k,pal){ try{
+      const [idx,base]=await Promise.all([loadData('img/idx/'+k+'.png'),loadData('img/cw/tuerkis-rot-'+k+'.jpg')]);
+      const P=pal.map(hex2rgb), W=base.width, H=base.height, out=new ImageData(W,H), o=out.data, b=base.data, d=idx.data;
+      for(let p=0,n=W*H*4;p<n;p+=4){const v=d[p];if(v<12){const c=P[v];o[p]=c[0];o[p+1]=c[1];o[p+2]=c[2];}else{o[p]=b[p];o[p+1]=b[p+1];o[p+2]=b[p+2];}o[p+3]=255;}
+      const c=document.createElement('canvas');c.width=W;c.height=H;c.getContext('2d').putImageData(out,0,0);return c;
+    }catch(e){return null;} };
   function loadData(url){ if(cache[url]) return cache[url];
     return cache[url]=new Promise((res,rej)=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;const x=c.getContext('2d');x.drawImage(im,0,0);res(x.getImageData(0,0,c.width,c.height));};im.onerror=rej;im.src=url;});}
   let curPal=null;
@@ -1026,7 +1140,7 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
     const name=label(v); document.getElementById('mxName').textContent=name; inp.setAttribute('aria-valuetext',name);
     const pal=mixAt(v); swatches(pal);
     if(Math.abs(t-i)<0.005){ window.__setCw(ways[i].f,true); return; }
-    curPal=pal; window.__mix=true; window.__clearActive();
+    curPal=pal; window.__mix=true; window.__clearActive(); window.__room3d&&window.__room3d.set({pal:pal});
     const cc=document.getElementById('cwCount'); if(cc) cc.textContent='Mischung';
     document.querySelectorAll('#explorer img[data-k]').forEach(im=>{ delete im.dataset.mixkey; });
     window.__refreshImgs();
@@ -1041,6 +1155,136 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
   const top=()=>parseFloat(getComputedStyle(nav).top)||0;
   const upd=()=>nav.classList.toggle('stuck', nav.getBoundingClientRect().top<=top()+0.5 && window.scrollY>0 && nav.offsetTop>0 && window.scrollY>=nav.offsetTop-top()-1);
   window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();})();
+
+(function(){const b=document.getElementById('pCopy'); if(!b) return; const t=document.getElementById('pMail');
+  b.addEventListener('click',()=>{const done=()=>{b.textContent='Kopiert';setTimeout(()=>b.textContent='Kopieren',1800);};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(t);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Markiert';setTimeout(()=>b.textContent='Kopieren',1800);};
+    try{navigator.clipboard.writeText(t.textContent).then(done,sel);}catch(e){sel();}});})();
+// ===== 3D-Raum 360°: Wände B, C, D mit Vouten, Decke, Boden =====
+(function(){
+  const host=document.getElementById('r3Stage'); if(!host) return;
+  const fail=m=>{host.innerHTML='<p class="r3-fail">'+m+'</p>';};
+  if(!window.THREE){ fail('Die 3D-Ansicht konnte nicht geladen werden.'); return; }
+  const T=THREE;
+  // Maße in m (aus H44-715 / Wandabwicklung)
+  const W=6.624, D=5.743, H=4.02;
+  const hv={b:3.587,c:3.455,d:3.610}, au={b:0.408,c:0.418,d:0.411};
+  const tex={b:{w:6.724,h:4.356},c:{w:6.350,h:4.329},d:{w:6.724,h:4.327},decke:{w:6.313,h:5.024}};
+  const bleed=0.05;
+  let renderer,scene,camera,started=false,mats={},wallA,auto=true,yaw=0,pitch=0.12,fov=72,dirty=true,last=performance.now();
+  function quad(p,uv){const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(p.flat(),3));g.setAttribute('uv',new T.Float32BufferAttribute(uv.flat(),2));g.setIndex([0,1,2,0,2,3]);return g;}
+  function uvW(k,u,y){const t=tex[k];return [(bleed+u*(t.w-2*bleed))/t.w,(bleed+y*(t.h-2*bleed))/t.h];} // u 0..1 entlang Wand, y 0..1 von unten (inkl. Voute)
+  function build(){
+    renderer=new T.WebGLRenderer({antialias:true,alpha:false});
+    renderer.setPixelRatio(Math.min(2,window.devicePixelRatio||1));
+    renderer.outputEncoding=T.sRGBEncoding;
+    host.appendChild(renderer.domElement);
+    scene=new T.Scene(); scene.background=new T.Color('#e9e6df');
+    camera=new T.PerspectiveCamera(fov,1,0.05,50); camera.position.set(0.2,1.6,0.9);
+    ['b','c','d','decke'].forEach(k=>{mats[k]=new T.MeshBasicMaterial({side:T.DoubleSide,color:0xffffff});});
+    const x0=-W/2,x1=W/2,z0=-D/2,z1=D/2;
+    // Wand B (Norden), Blick von innen: links = Westen (A), rechts = Osten (C)
+    const fb=hv.b/(hv.b+0.669);
+    scene.add(new T.Mesh(quad([[x0,0,z0],[x1,0,z0],[x1,hv.b,z0],[x0,hv.b,z0]],[uvW('b',0,0),uvW('b',1,0),uvW('b',1,fb),uvW('b',0,fb)]),mats.b));
+    scene.add(new T.Mesh(quad([[x0,hv.b,z0],[x1,hv.b,z0],[x1-au.c,H,z0+au.b],[x0,H,z0+au.b]],[uvW('b',0,fb),uvW('b',1,fb),uvW('b',(W-au.c)/W,1),uvW('b',0,1)]),mats.b));
+    // Wand C (Osten): links = Norden (B), rechts = Süden (D)
+    const fc=hv.c/(hv.c+0.774);
+    scene.add(new T.Mesh(quad([[x1,0,z0],[x1,0,z1],[x1,hv.c,z1],[x1,hv.c,z0]],[uvW('c',0,0),uvW('c',1,0),uvW('c',1,fc),uvW('c',0,fc)]),mats.c));
+    scene.add(new T.Mesh(quad([[x1,hv.c,z0],[x1,hv.c,z1],[x1-au.c,H,z1-au.d],[x1-au.c,H,z0+au.b]],[uvW('c',0,fc),uvW('c',1,fc),uvW('c',(D-au.d)/D,1),uvW('c',au.b/D,1)]),mats.c));
+    // Wand D (Süden): links = Osten (C), rechts = Westen (A)
+    const fd=hv.d/(hv.d+0.617);
+    scene.add(new T.Mesh(quad([[x1,0,z1],[x0,0,z1],[x0,hv.d,z1],[x1,hv.d,z1]],[uvW('d',0,0),uvW('d',1,0),uvW('d',1,fd),uvW('d',0,fd)]),mats.d));
+    scene.add(new T.Mesh(quad([[x1,hv.d,z1],[x0,hv.d,z1],[x0,H,z1-au.d],[x1-au.c,H,z1-au.d]],[uvW('d',0,fd),uvW('d',1,fd),uvW('d',1,1),uvW('d',au.c/W,1)]),mats.d));
+    // Decke (Untersicht: Wand B oben, Wand C links)
+    const cx1=x1-au.c,cz0=z0+au.b,cz1=z1-au.d, t=tex.decke, uu=u=>(bleed+u*(t.w-2*bleed))/t.w, vv=v=>(bleed+v*(t.h-2*bleed))/t.h;
+    scene.add(new T.Mesh(quad([[x0,H,cz0],[cx1,H,cz0],[cx1,H,cz1],[x0,H,cz1]],[[uu(1),vv(1)],[uu(0),vv(1)],[uu(0),vv(0)],[uu(1),vv(0)]]),mats.decke));
+    // Wand A: offen zu R102
+    wallA=new T.MeshBasicMaterial({side:T.DoubleSide,color:0x536169});
+    scene.add(new T.Mesh(quad([[x0,0,z1],[x0,0,z0],[x0,H,z0+0.001],[x0,H,z1]],[[0,0],[1,0],[1,1],[0,1]]),wallA));
+    // Boden: Tafelparkett nach Grundriss / Detail H44-613 (Rautenstern-Feld, Friesband mit Kreuzmuster, Adern)
+    const PX=400, cv=document.createElement('canvas'); cv.width=Math.round(W*PX); cv.height=Math.round(D*PX); const g=cv.getContext('2d');
+    const rnd=(()=>{let s=11;return()=>(s=(s*16807)%2147483647)/2147483647;})();
+    const wood=(base,j)=>{const k=1+(rnd()-0.5)*j;return 'rgb('+Math.round(base[0]*k)+','+Math.round(base[1]*k)+','+Math.round(base[2]*k)+')';};
+    const OAK=[188,150,102], OAK2=[176,137,90], DARK=[150,110,70], WAL=[92,60,36];
+    const poly=(pts,fill)=>{g.beginPath();g.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)g.lineTo(pts[i][0],pts[i][1]);g.closePath();g.fillStyle=fill;g.fill();g.strokeStyle='rgba(40,22,10,.35)';g.lineWidth=1.2;g.stroke();};
+    const cw=cv.width, ch=cv.height, m=(v)=>v*PX;
+    // Friesband außen (Kreuz-/Rautenmuster), Breite 0,20 m
+    const fbw=m(0.20); g.fillStyle=wood(DARK,0);g.fillRect(0,0,cw,ch);
+    const band=(x0,y0,len,horiz)=>{const n=Math.round(len/fbw);const st=len/n;for(let i=0;i<n;i++){const a=horiz?[x0+i*st,y0]:[x0,y0+i*st];
+      const P=(u,v)=>horiz?[a[0]+u*st,a[1]+v*fbw]:[a[0]+v*fbw,a[1]+u*st];
+      poly([P(0,0),P(1,0),P(.5,.5)],wood(OAK,.12));poly([P(1,0),P(1,1),P(.5,.5)],wood(OAK2,.12));poly([P(1,1),P(0,1),P(.5,.5)],wood(OAK,.12));poly([P(0,1),P(0,0),P(.5,.5)],wood(OAK2,.12));}};
+    band(0,0,cw,true); band(0,ch-fbw,cw,true); band(0,fbw,ch-2*fbw,false); band(cw-fbw,fbw,ch-2*fbw,false);
+    // Adern: zwei schmale dunkle Streifen mit heller Zwischenleiste
+    const ad=[[0.035,WAL],[0.05,OAK],[0.035,WAL]]; let o=fbw;
+    ad.forEach(([w,c])=>{const t=m(w);g.fillStyle=wood(c,0);g.fillRect(o,o,cw-2*o,t);g.fillRect(o,ch-o-t,cw-2*o,t);g.fillRect(o,o,t,ch-2*o);g.fillRect(cw-o-t,o,t,ch-2*o);o+=t;});
+    // Feld: Rautenstern-Tafeln, Modul 0,36 m
+    const fx0=o,fy0=o,fw=cw-2*o,fh=ch-2*o, s=m(0.36);
+    g.save(); g.beginPath(); g.rect(fx0,fy0,fw,fh); g.clip();
+    const nx=Math.ceil(fw/s)+1, ny=Math.ceil(fh/s)+1, ox=fx0+(fw-Math.floor(fw/s)*s)/2-s, oy=fy0+(fh-Math.floor(fh/s)*s)/2-s;
+    for(let j=0;j<=ny;j++)for(let i=0;i<=nx;i++){const x=ox+i*s,y=oy+j*s, c=[x+s/2,y+s/2];
+      const tl=[x,y],tr=[x+s,y],br=[x+s,y+s],bl=[x,y+s], mt=[x+s/2,y],mr=[x+s,y+s/2],mb=[x+s/2,y+s],ml=[x,y+s/2];
+      // Ecken dunkel (bilden an den Kreuzungen dunkle Rauten)
+      poly([tl,mt,ml],wood(DARK,.14));poly([tr,mr,mt],wood(DARK,.14));poly([br,mb,mr],wood(DARK,.14));poly([bl,ml,mb],wood(DARK,.14));
+      // Raute als Stern aus vier Drachen
+      const alt=(i+j)%2===0, A=alt?OAK:OAK2, B=alt?OAK2:OAK;
+      poly([mt,c,ml],wood(A,.1));poly([mt,mr,c],wood(B,.1));poly([mr,mb,c],wood(A,.1));poly([mb,ml,c],wood(B,.1));}
+    g.restore();
+    // Maserung
+    g.globalAlpha=0.07; for(let k=0;k<9000;k++){g.fillStyle=rnd()<.5?'#3a2210':'#f3dfb8';const x=rnd()*cw,y=rnd()*ch;if(rnd()<.5)g.fillRect(x,y,1+rnd()*2,10+rnd()*40);else g.fillRect(x,y,10+rnd()*40,1+rnd()*2);} g.globalAlpha=1;
+    const ft=new T.CanvasTexture(cv);ft.encoding=T.sRGBEncoding;ft.anisotropy=8;
+    const floor=new T.Mesh(new T.PlaneGeometry(W,D),new T.MeshBasicMaterial({map:ft}));floor.rotation.x=-Math.PI/2;scene.add(floor);
+    // Steuerung: Umsehen per Ziehen, Zoom per Rad/Pinch
+    const el=renderer.domElement; el.style.touchAction='none'; el.tabIndex=0; el.setAttribute('aria-label','3D-Ansicht Raum 104. Ziehen oder Pfeiltasten zum Umsehen.');
+    let drag=null,pts=new Map(),pinch=0;
+    el.addEventListener('pointerdown',e=>{el.setPointerCapture(e.pointerId);pts.set(e.pointerId,[e.clientX,e.clientY]);drag=[e.clientX,e.clientY];setAuto(false);});
+    el.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,[e.clientX,e.clientY]);
+      if(pts.size===2){const [a,b]=[...pts.values()];const d=Math.hypot(a[0]-b[0],a[1]-b[1]);if(pinch)zoom((pinch-d)*0.12);pinch=d;return;}
+      if(!drag)return;const dx=e.clientX-drag[0],dy=e.clientY-drag[1];drag=[e.clientX,e.clientY];const s=fov/host.clientHeight*Math.PI/180;yaw+=dx*s;pitch=Math.max(-1.35,Math.min(1.35,pitch+dy*s));dirty=true;});
+    const up=e=>{pts.delete(e.pointerId);if(pts.size<2)pinch=0;if(!pts.size)drag=null;};
+    el.addEventListener('pointerup',up);el.addEventListener('pointercancel',up);
+    el.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY*0.03);},{passive:false});
+    el.addEventListener('keydown',e=>{const m={ArrowLeft:[0.08,0],ArrowRight:[-0.08,0],ArrowUp:[0,0.06],ArrowDown:[0,-0.06]}[e.key];if(m){e.preventDefault();setAuto(false);yaw+=m[0];pitch=Math.max(-1.35,Math.min(1.35,pitch+m[1]));dirty=true;}});
+    // 360°-Drehrad in der Mitte
+    const dl=document.createElement('div'); dl.className='r3-dial'; dl.setAttribute('role','slider'); dl.setAttribute('aria-label','Blickrichtung drehen, 360 Grad'); dl.tabIndex=0;
+    dl.innerHTML='<svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" class="d-ring"/><path d="M60 6 a54 54 0 0 1 44 23" class="d-arc"/><path d="M104 29 l-9 -1 l6 -7 z" class="d-tip"/><path d="M60 114 a54 54 0 0 1 -44 -23" class="d-arc"/><path d="M16 91 l9 1 l-6 7 z" class="d-tip"/><g class="d-ind"><circle cx="60" cy="14" r="5"/></g><text x="60" y="66" text-anchor="middle">360°</text></svg>';
+    host.appendChild(dl);
+    const ind=dl.querySelector('.d-ind'); let da=null;
+    const ang=e=>{const r=dl.getBoundingClientRect();return Math.atan2(e.clientY-(r.top+r.height/2),e.clientX-(r.left+r.width/2));};
+    dl.addEventListener('pointerdown',e=>{e.stopPropagation();dl.setPointerCapture(e.pointerId);da=ang(e);setAuto(false);dl.classList.add('on');});
+    dl.addEventListener('pointermove',e=>{if(da===null)return;const a=ang(e);let d=a-da;if(d>Math.PI)d-=2*Math.PI;if(d<-Math.PI)d+=2*Math.PI;da=a;yaw-=d;dirty=true;});
+    const dup=()=>{da=null;dl.classList.remove('on');}; dl.addEventListener('pointerup',dup); dl.addEventListener('pointercancel',dup);
+    dl.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();setAuto(false);yaw+=(e.key==='ArrowLeft'?0.12:-0.12);dirty=true;}});
+    window.__r3dial=()=>{const deg=((-yaw*180/Math.PI)%360+360)%360;ind.setAttribute('transform','rotate('+deg.toFixed(1)+' 60 60)');dl.setAttribute('aria-valuenow',Math.round(deg));};
+    new ResizeObserver(resize).observe(host); resize();
+    requestAnimationFrame(loop);
+  }
+  function zoom(d){fov=Math.max(38,Math.min(95,fov+d));dirty=true;}
+  function resize(){const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);renderer.domElement.style.width='100%';renderer.domElement.style.height='100%';camera.aspect=w/h;dirty=true;}
+  function loop(t){const dt=Math.min(0.05,(t-last)/1000);last=t;
+    if(auto&&!matchMedia('(prefers-reduced-motion: reduce)').matches){yaw-=dt*0.14;dirty=true;}
+    if(dirty&&inView){camera.fov=fov;camera.updateProjectionMatrix();const cp=Math.cos(pitch);camera.lookAt(camera.position.x+Math.sin(yaw)*-cp,camera.position.y+Math.sin(pitch),camera.position.z-Math.cos(yaw)*cp);renderer.render(scene,camera);dirty=false;window.__r3dial&&window.__r3dial();}
+    requestAnimationFrame(loop);}
+  function setAuto(v){auto=v;const b=document.getElementById('r3Auto');if(b){b.setAttribute('aria-pressed',v);b.textContent=v?'Rundumblick stoppen':'Rundumblick starten';}}
+  // Blickrichtungen
+  const views={b:[0,0.25],c:[-Math.PI/2,0.25],d:[Math.PI,0.25],decke:[0,1.3]};
+  document.querySelectorAll('[data-r3view]').forEach(b=>b.addEventListener('click',()=>{const v=views[b.dataset.r3view];yaw=v[0];pitch=v[1];setAuto(false);dirty=true;}));
+  document.getElementById('r3Auto')?.addEventListener('click',()=>setAuto(!auto));
+  // Texturen je Farbwelt oder Mischung
+  const loader=new T.TextureLoader(); let state={cw:'tuerkis-rot'}, seq=0;
+  function applyTex(k,t){t.encoding=T.sRGBEncoding;t.anisotropy=renderer.capabilities.getMaxAnisotropy();t.minFilter=T.LinearMipmapLinearFilter;const old=mats[k].map;mats[k].map=t;mats[k].needsUpdate=true;if(old)old.dispose();dirty=true;}
+  function paint(){ if(!started) return; const my=++seq, st=state;
+    const g=st.pal?st.pal[0]:CONV[st.cw][0][1]; wallA.color.set(g).offsetHSL(0,0,-0.06); dirty=true;
+    ['b','c','d','decke'].forEach(k=>{
+      if(st.pal){ window.__mixCanvas && window.__mixCanvas(k,st.pal).then(c=>{ if(my!==seq||!c) return; applyTex(k,new T.CanvasTexture(c)); }); }
+      else loader.load('img/cw/'+st.cw+'-'+k+'.jpg',t=>{ if(my!==seq){t.dispose();return;} applyTex(k,t); });
+    });
+    const n=document.getElementById('r3Name'); if(n) n.textContent=st.pal?(document.getElementById('mxName')?.textContent||'Mischung'):ways.find(w=>w.f===st.cw).n;
+  }
+  let tmr=0;
+  window.__room3d={set(s){state=s; clearTimeout(tmr); tmr=setTimeout(paint, s.pal?140:0);}};
+  let inView=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{inView=e.isIntersecting; if(inView){ if(!started){ try{build();started=true;paint();}catch(err){fail('Ihr Browser unterstützt keine 3D-Darstellung (WebGL).');} } dirty=true; }});},{rootMargin:'200px'}).observe(host);
+})();
 </script>
 
 </body>
