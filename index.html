@@ -3,14 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gutshaus Hohenschönhausen R104</title>
-<meta name="description" content="Projektchronik Wandbild Raum 104, Gutshaus Hohenschönhausen: vom Hochzeitsfoto 1924 bis zu den Vektordaten.">
+<title>Gutshaus R104 Layout B</title>
+<meta name="description" content="Projektchronik Wandbild Raum 104, Gutshaus Hohenschönhausen: vom Hochzeitsfoto 1924 bis zur Patina.">
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..700;1,6..72,200..700&display=swap">
 <style>
 /* Layout: a single vertical timeline. Left rail = date in plan-mono, right = station with large images. One bold moment: the 1924 photo as opener. */
 :root{
@@ -59,7 +58,10 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-to
 
 /* Inhalt */
 nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;padding-block:14px;border-block:1px solid var(--rule);font-family:var(--f-mono);font-size:12.5px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
-nav.toc a{color:var(--fg);text-decoration:none}
+nav.toc a{color:var(--fg);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s}
+nav.toc a.on{border-bottom-color:var(--wine);color:var(--wine)}
+nav.toc a.on span{color:var(--wine)}
+.station{scroll-margin-top:72px}
 nav.toc a span{color:var(--rust);margin-right:6px}
 nav.toc a:hover{color:var(--rust)}
 
@@ -269,6 +271,222 @@ footer b{display:block;color:var(--fg);font-weight:500}
   .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .files li{grid-template-columns:minmax(0,1fr);gap:2px}
 }
+
+/* ===== LAYOUT B · Swiss Modern =====
+   Layout: strenges Raster, schwarze Linien, große fette Helvetica, Stationsnummern als Leitelement. Ein Akzent: Weinrot. */
+:root{
+  --bg:#e9e6df;--surface:#f4f2ed;--fg:#111111;--muted:#66625a;--rule:#111111;--hair:#c9c4b8;
+  --rust:#6e1f2e;--ochre:#c8b07a;--wine:#6e1f2e;--wine-hover:#8a2a3c;--on-wine:#ffffff;
+  --f-display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --f-body:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --f-mono:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0e0e;--surface:#191919;--fg:#f2f2f0;--muted:#9b9b98;--rule:#f2f2f0;--hair:#333331;--rust:#e0788b;--ochre:#d8c08a;--wine:#a8324a;--wine-hover:#c03d57;--on-wine:#ffffff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0e0e;--surface:#191919;--fg:#f2f2f0;--muted:#9b9b98;--rule:#f2f2f0;--hair:#333331;--rust:#e0788b;--ochre:#d8c08a;--wine:#a8324a;--wine-hover:#c03d57;--on-wine:#ffffff;color-scheme:dark}
+
+body{font-size:17px;line-height:1.5;letter-spacing:-.005em;-webkit-font-smoothing:antialiased}
+header.top{font-weight:700;font-size:11px;letter-spacing:.04em;color:var(--fg);border-bottom:2px solid var(--rule);padding-block:16px}
+.lead{margin-top:0}
+.lead img{max-height:92vh}
+.lead figcaption{font-size:12px;letter-spacing:0}
+.hero{padding-block:clamp(40px,7vw,96px) clamp(40px,6vw,80px)}
+.hero > div{max-width:none;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px 48px;align-items:end}
+.hero h1{grid-column:1/-1;font-weight:700;font-size:clamp(3rem,9.2vw,8.8rem);line-height:.9;letter-spacing:-.05em;margin:0 0 16px}
+.hero h1 em{color:var(--wine)}
+.hero p{font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.4;max-width:30em;margin:0}
+.facts{grid-column:1/-1;background:none;border:0;border-top:2px solid var(--rule);gap:0;margin-top:24px}
+.facts div{background:none;padding:14px 16px 0 0;border-right:1px solid var(--hair)}
+.facts div:last-child{border-right:0}
+.facts dt{font-weight:700;font-size:11px;letter-spacing:.06em;color:var(--muted)}
+.facts dd{font-weight:700;font-size:clamp(1.4rem,2.6vw,2.2rem);letter-spacing:-.03em;line-height:1.1}
+
+nav.toc{font-size:13px;font-weight:700;border-top:2px solid var(--rule);border-bottom:1px solid var(--hair);gap:6px 28px;padding-block:14px}
+nav.toc a span{color:var(--muted);margin-right:8px;font-weight:400}
+
+main,body{counter-reset:st}
+.station{counter-increment:st;border-bottom:2px solid var(--rule);padding-block:clamp(56px,7vw,104px);grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:24px clamp(24px,4vw,56px)}
+.when{font-size:13px}
+.when b{display:none}
+.when::before{content:counter(st,decimal-leading-zero);display:block;font-weight:700;font-size:clamp(3.6rem,8.1vw,7.65rem);line-height:.8;letter-spacing:-.06em;color:var(--fg);margin-bottom:14px}
+.when .date{font-weight:700;font-size:14px;color:var(--wine)}
+.body h2{font-weight:700;font-size:clamp(2.1rem,4.6vw,4rem);line-height:.98;letter-spacing:-.04em;margin-bottom:24px;max-width:14em}
+.body > p,.body .text p{font-size:1.08rem;line-height:1.5}
+.body h3,.res-head h3{font-weight:700;font-size:12px;letter-spacing:.08em;color:var(--fg)}
+figcaption{font-size:12px;line-height:1.4}
+th{font-weight:700;font-size:11px}
+td.m{font-family:var(--f-body);font-weight:500}
+th,td{border-bottom-color:var(--hair)}
+
+.measure strong{font-weight:700;font-size:clamp(3rem,6vw,5rem);letter-spacing:-.05em;color:var(--fg)}
+.measure span{font-size:12px}
+.plan{border-color:var(--hair)}
+
+/* Slider */
+.nav{box-shadow:none;border-radius:0}
+.slider-cap{font-size:12px}
+
+/* Explorer */
+.cw-bar{background:var(--bg);border:0;border-top:2px solid var(--rule);border-bottom:1px solid var(--hair);padding:14px 0}
+.cw-lead strong{font-family:var(--f-body);font-weight:700;font-size:1.25rem;letter-spacing:-.02em}
+.chip{border-radius:0;font-weight:700}
+.chip .sw{border-radius:0;width:26px;height:26px}
+.cta{font-weight:700;letter-spacing:0;border-radius:0}
+.sheets{border-bottom:2px solid var(--rule)}
+.sheets button{border-top:0;border-right:1px solid var(--hair)}
+.sheets button:last-child{border-right:0}
+.sheets button i{font-family:var(--f-body);font-weight:700;font-size:3rem;letter-spacing:-.06em}
+.sheets button b{font-weight:700}
+.sheets button em{font-family:var(--f-body);font-size:12px}
+.viewer{border:0;background:var(--surface)}
+.kicker{font-family:var(--f-body);font-weight:700;font-size:11px;color:var(--wine)}
+.side-h{font-family:var(--f-body)!important;font-weight:700!important;letter-spacing:-.035em!important;font-size:clamp(1.8rem,3vw,2.6rem)!important;line-height:1!important}
+.dim{font-family:var(--f-body);font-weight:700}
+.seg{border-color:var(--rule)}
+.seg button{font-weight:700;border-right-color:var(--rule)}
+.card{border-color:var(--hair)}
+.card h4{font-weight:700;font-size:17px;letter-spacing:-.01em}
+.anatomy,.facts{font-family:var(--f-body)}
+.lb-bar{font-family:var(--f-body)}
+
+footer{border-top:2px solid var(--rule);margin-top:0;padding-top:24px;font-size:13px;color:var(--muted)}
+footer b{font-weight:700;color:var(--fg);margin-bottom:2px}
+
+@media (max-width:860px){
+  .hero > div{grid-template-columns:minmax(0,1fr)}
+  .station{grid-template-columns:minmax(0,1fr)}
+  .when{display:block}
+  .when::before{font-size:clamp(3.6rem,18vw,5.4rem)}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts div:nth-child(2){border-right:0}
+}
+
+/* Serifen-Display: Newsreader für Überschriften, Nummern und große Zahlen; Fließtext bleibt Helvetica */
+.hero h1{font-family:var(--f-display);font-weight:500;letter-spacing:-.035em;line-height:.92;font-variation-settings:"opsz" 72}
+.hero h1 em{font-style:italic}
+.when::before{font-family:var(--f-display);font-weight:400;letter-spacing:-.04em;font-variation-settings:"opsz" 72}
+.body h2{font-family:var(--f-display);font-weight:500;letter-spacing:-.025em;line-height:1.02;font-variation-settings:"opsz" 72}
+.facts dd,.measure strong{font-family:var(--f-display);font-weight:500;letter-spacing:-.02em;font-variation-settings:"opsz" 72}
+.sheets button i{font-family:var(--f-display);font-weight:400;letter-spacing:-.03em}
+.side-h{font-family:var(--f-display)!important;font-weight:500!important;letter-spacing:-.02em!important}
+.cw-lead strong{font-family:var(--f-display);font-weight:500;font-size:1.45rem}
+
+/* Eleganter: dünnere Schnitte */
+body{font-weight:300}
+b,strong,th,.kicker{font-weight:500}
+.hero h1{font-weight:250;letter-spacing:-.03em;font-size:clamp(3rem,8.6vw,8.2rem)}
+.hero h1 em{font-weight:250}
+.when::before{font-weight:200;letter-spacing:-.03em}
+.body h2{font-weight:300;letter-spacing:-.02em}
+.facts dd,.measure strong{font-weight:300}
+.sheets button i{font-weight:200}
+.side-h{font-weight:300!important;letter-spacing:-.015em!important}
+.cw-lead strong{font-weight:300}
+header.top,nav.toc,.facts dt,.body h3,.res-head h3,th,.chip,.cta,.seg button,.sheets button b,.card h4,.dim,footer b{font-weight:500}
+.when .date{font-weight:400}
+.hero p,.body > p,.body .text p{font-weight:300}
+
+
+/* Farbwelt-Auswahl im Stil einer Farbkarte: flache Felder ohne Abstand, Name oben, Farbcode unten, Mono-Schrift */
+.cw-bar{position:static;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 24px;padding:18px 0 0;background:none;border:0;border-top:2px solid var(--rule);backdrop-filter:none}
+.cw-lead{grid-column:1;grid-row:1;display:flex;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:6px 18px;font-family:"Roboto Mono",ui-monospace,Menlo,monospace}
+.cw-label{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
+.cw-count{font-size:12px;letter-spacing:.08em;color:var(--muted);font-variant-numeric:tabular-nums}
+.cw-help{font-size:12px;color:var(--muted)}
+.cw-next{grid-column:2;grid-row:1;justify-self:end;border:0;border-bottom:1px solid var(--fg);background:none;color:var(--fg);padding:2px 0;font:500 12px "Roboto Mono",ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.cw-next:hover{color:var(--wine);border-color:var(--wine)}
+.cw-chips{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;flex:none}
+.chip{position:relative;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:0;height:clamp(150px,15vw,200px);padding:16px 16px 22px;border:0;border-radius:0;text-align:left;cursor:pointer;font-family:"Roboto Mono",ui-monospace,Menlo,monospace;transition:filter .2s}
+.chip:hover{filter:brightness(1.08);border:0}
+.chip[aria-pressed="true"]{border:0}
+.chip .t-name{font-size:clamp(13px,1.2vw,16px);font-weight:400;line-height:1.2;letter-spacing:.02em;text-transform:uppercase}
+.chip .t-code{font-size:10.5px;line-height:1.45;letter-spacing:.02em;opacity:.9}
+.chip .t-mark{position:absolute;top:14px;right:14px;font-size:11px;opacity:0;transition:opacity .2s}
+.chip[aria-pressed="true"] .t-mark{opacity:1}
+.chip .t-bands{position:absolute;left:0;right:0;bottom:0;height:6px;display:grid;grid-template-columns:repeat(5,1fr);opacity:0;transition:opacity .2s}
+.chip .t-bands i{display:block}
+.chip[aria-pressed="true"] .t-bands{opacity:1}
+.chip:focus-visible{outline:2px solid var(--fg);outline-offset:-4px}
+@media (max-width:860px){.cw-chips{grid-template-columns:repeat(3,minmax(0,1fr))}.chip{height:140px}}
+@media (max-width:420px){.chip{height:120px;padding:12px 12px 18px}.chip .t-code{font-size:9.5px}}
+
+/* Farbwerte-Umschalter + Werteliste */
+.cw-modes{grid-column:1/-1;grid-row:2;display:flex;align-items:center;gap:0;font-family:"Roboto Mono",ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+.cw-modes span{color:var(--muted);margin-right:12px}
+.cw-modes button{border:1px solid var(--fg);border-right-width:0;background:none;color:var(--fg);padding:6px 12px;font:inherit;letter-spacing:inherit;cursor:pointer}
+.cw-modes button:last-child{border-right-width:1px}
+.cw-modes button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.cw-chips{grid-row:3}
+.vals{list-style:none;margin:2px 0 4px;padding:0;display:grid;gap:0;font-family:"Roboto Mono",ui-monospace,Menlo,monospace;font-size:11px;line-height:1.35}
+.vals li{display:grid;grid-template-columns:14px 6.5rem minmax(0,1fr);gap:8px;align-items:center;padding:5px 0;border-top:1px solid var(--hair)}
+.vals i{width:14px;height:14px;display:block}
+.vals .r{color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.vals .v{overflow-wrap:anywhere}
+.vals em{font-style:normal;color:var(--muted)}
+
+/* Station 7 Patina: Vorher-Nachher-Vergleich */
+.cmpslide{position:relative;overflow:hidden;background:var(--surface);user-select:none;touch-action:pan-y}
+.cmpslide > img{display:block;width:100%;height:auto}
+.cs-before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.cs-before img{width:100%;height:100%;object-fit:cover;display:block}
+.cs-line{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:#fff;pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.cs-line i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;font-style:normal;font-size:18px}
+.cmpslide input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmpslide input:focus-visible + *,.cmpslide:focus-within .cs-line i{outline:2px solid #fff;outline-offset:2px}
+.cs-tag{position:absolute;top:14px;padding:5px 10px;background:rgba(17,17,17,.72);color:#fff;font:500 11px var(--f-body);letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+.cs-l{left:14px}.cs-r{right:14px}
+.anatomy.pat{margin-top:12px}
+.vals li.grp{display:block;padding:10px 0 3px;border-top:1px solid var(--rule);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
+.vals li.grp:first-child{padding-top:4px}
+.vals li.grp + li{border-top:0}
+.howto{margin-top:6px;padding:14px 18px;border-left:3px solid var(--wine);background:var(--surface);max-width:62ch}
+.howto b{font-weight:500}
+.cw-help{color:var(--fg)!important}
+.chip .t-mark{display:none}
+.chip .t-go{position:absolute;right:14px;top:16px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s}
+.chip:hover .t-go,.chip:focus-visible .t-go{opacity:1;transform:none}
+.chip[aria-pressed="true"] .t-go{opacity:1;transform:none}
+@media (max-width:860px){.chip .t-go{display:none}}
+
+/* Farbschieber */
+.mixer{grid-column:1/-1;grid-row:4;display:grid;gap:10px;padding:22px 0 6px;font-family:"Roboto Mono",ui-monospace,Menlo,monospace}
+.mx-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
+.mx-help{font-size:12px;color:var(--fg)}
+.mx-head strong{font-family:var(--f-display);font-weight:300;font-size:clamp(1.2rem,2vw,1.6rem);letter-spacing:-.01em;margin-left:auto}
+.mx-track{position:relative;padding:8px 0}
+#mx{-webkit-appearance:none;appearance:none;display:block;width:100%;height:28px;background:var(--track);border:0;margin:0;cursor:pointer;outline:none}
+#mx::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:44px;background:var(--bg);border:2px solid var(--fg);box-shadow:0 1px 6px rgba(0,0,0,.25);cursor:ew-resize}
+#mx::-moz-range-thumb{width:12px;height:42px;background:var(--bg);border:2px solid var(--fg);border-radius:0;cursor:ew-resize}
+#mx::-moz-range-track{background:transparent}
+#mx:focus-visible{outline:2px solid var(--wine);outline-offset:4px}
+.mx-ticks{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.mx-ticks span{white-space:nowrap}
+.mx-sw{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px;font-size:11px;line-height:1.35}
+.mx-sw li{display:grid;grid-template-columns:14px 7.5rem 5rem minmax(0,1fr);gap:8px;align-items:center;padding:5px 0;border-top:1px solid var(--hair)}
+.mx-sw i{width:14px;height:14px;display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.mx-sw .r{color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.mx-sw em{font-style:normal;color:var(--muted)}
+@media (max-width:760px){.mx-sw{grid-template-columns:minmax(0,1fr)}.mx-ticks{font-size:8.5px}.mx-ticks span:nth-child(even){visibility:hidden}.mx-head strong{margin-left:0;width:100%}}
+@media (max-width:420px){.mx-sw li{grid-template-columns:14px 6.2rem minmax(0,1fr)}.mx-sw li .v:last-child{grid-column:3}}
+
+/* Stationsnavigation: angedockt 70 % Schwarz, transparent */
+nav.toc{transition:background-color .25s,box-shadow .25s,border-color .25s}
+nav.toc.stuck{background:transparent;border-top-color:transparent;border-bottom-color:transparent}
+nav.toc::before{content:"";position:absolute;top:-2px;bottom:-1px;left:50%;width:100vw;transform:translateX(-50%);background:color-mix(in srgb,var(--bg) 92%,transparent);box-shadow:0 1px 0 var(--hair);z-index:-1;opacity:0;transition:opacity .25s;pointer-events:none}
+nav.toc.stuck::before{opacity:1}
+nav.toc.stuck a{color:var(--fg)}
+nav.toc.stuck a span{color:var(--muted)}
+nav.toc.stuck a.on,nav.toc.stuck a.on span{color:var(--wine);border-bottom-color:var(--wine)}
+nav.toc.stuck a:hover{color:var(--wine)}
+
+/* Raumdaten serifenlos */
+.facts dd{font-family:var(--f-body);font-weight:300;letter-spacing:-.02em;font-variation-settings:normal}
+
+/* Raumdaten als Kastenreihe (Layout wie Original, Typo Layout B) */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);border-top:1px solid var(--hair);margin-top:32px}
+.facts div{background:var(--bg);padding:16px 20px 18px;border-right:0}
+.facts div:nth-child(2){border-right:0}
+.facts dt{margin-bottom:4px}
+@media (max-width:860px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 
 <div class="wrap">
@@ -286,7 +504,7 @@ footer b{display:block;color:var(--fg);font-weight:500}
   <div>
     <h1>Ein Blütenwald kehrt in den <em>Gastraum</em> zurück</h1>
     <p>1924 feierte eine Hochzeitsgesellschaft in einem Raum, dessen Wände und Gewölbe ganz von gemalten Bäumen und Wolkenblüten bedeckt waren. Heute sind davon nur Fragmente unter abblätternden Farbschichten übrig.</p>
-    <p>Diese Seite zeigt Schritt für Schritt, wie aus Archivfoto, Befund und Ausführungsplanung ein neues, maßgenaues Wandbild für R104 entstanden ist.</p>
+    <p>Diese Seite zeigt Schritt für Schritt, wie aus Archivfoto, Befund und Ausführungsplanung ein neues, maßgenaues Wandbild für R104 entstehen wird.</p>
     <dl class="facts">
       <div><dt>Fläche</dt><dd>114,70 m²</dd></div>
       <div><dt>Umfang</dt><dd>56,24 m</dd></div>
@@ -297,16 +515,17 @@ footer b{display:block;color:var(--fg);font-weight:500}
 </section>
 
 <nav class="toc" aria-label="Stationen">
-  <a href="#1924"><span>1</span>Der Raum 1924</a>
+  <a href="#raum1924"><span>1</span>Der Raum 1924</a>
   <a href="#planung"><span>2</span>Planung</a>
   <a href="#bestand"><span>3</span>Bestand</a>
   <a href="#befund"><span>4</span>Befund</a>
   <a href="#farbe"><span>5</span>Farbstudien</a>
   <a href="#ergebnis"><span>6</span>Ergebnis</a>
+  <a href="#patina"><span>7</span>Patina</a>
 </nav>
 
 <!-- 1 -->
-<section class="station" id="1924">
+<section class="station" id="raum1924">
   <div class="when"><b>Station 1</b><span class="date">1924</span></div>
   <div class="body">
     <h2>Der Raum als Festsaal</h2>
@@ -389,8 +608,8 @@ footer b{display:block;color:var(--fg);font-weight:500}
     <p>Um die Wirkung im Raum zu beurteilen, wurde das Motiv in Collagen direkt auf das Hochzeitsfoto gelegt. So lassen sich Farbstimmungen im originalen Umfeld aus Kronleuchter, Bleiglas und Bilderrahmen vergleichen.</p>
     <div class="grid g5">
       <figure><div class="crop tall"><img src="img/var-rot-beige.jpg" alt="Collage Variante rot-beige" loading="lazy"></div><figcaption>rot-beige</figcaption></figure>
-      <figure><div class="crop tall"><img src="img/var-rot-gruen.jpg" alt="Collage Variante rot-grün" loading="lazy"></div><figcaption>rot-grün</figcaption></figure>
-      <figure><div class="crop tall"><img src="img/var-rot-blau.jpg" alt="Collage Variante rot-blau" loading="lazy"></div><figcaption>rot-blau</figcaption></figure>
+      <figure><div class="crop tall"><img src="img/var-rot-gruen.jpg" alt="Collage Variante bordeaux-grün" loading="lazy"></div><figcaption>bordeaux-grün</figcaption></figure>
+      <figure><div class="crop tall"><img src="img/var-rot-blau.jpg" alt="Collage Variante bordeaux-blau" loading="lazy"></div><figcaption>bordeaux-blau</figcaption></figure>
       <figure><div class="crop tall"><img src="img/var-tuerkis-rot.jpg" alt="Collage Variante türkis-rot" loading="lazy"></div><figcaption>türkis-rot</figcaption></figure>
       <figure><div class="crop tall"><img src="img/var-gruen.jpg" alt="Kolorierte Aufnahme Variante grün" loading="lazy"></div><figcaption>grün (koloriert)</figcaption></figure>
     </div>
@@ -399,18 +618,26 @@ footer b{display:block;color:var(--fg);font-weight:500}
 
 <!-- 6 -->
 <section class="station" id="ergebnis">
-  <div class="when"><b>Station 6</b><span class="date">26.09.2026</span></div>
+  <div class="when"><b>Station 6</b></div>
   <div class="body">
-    <h2>Ergebnis: Wandbild als Vektordaten</h2>
+    <h2>Erste Skizze des Musterverlaufs</h2>
     <p>Aus allen Quellen entstand ein durchgehendes Wandbild für R104. Zehn Bäume wachsen aus den Pfeilern zwischen den Öffnungen von Wand B, C und D. Ihre Kronen laufen über die Vouten in die Decke und schließen dort als Himmel aus Blüten und Blättern.</p>
-    <p>Alle Maße stammen aus den Vektordaten von H44-715, Index D. Die Dateien liegen im Maßstab 1:1 in Millimetern vor und sind druckfertig. Die Abbildungen unten stammen aus dem Übersichtsplan HSH_R104_Wandbild_Plan_A1.pdf.</p>
+    <p>Alle Maße stammen aus den Vektordaten von H44-715, Index D. Die Abbildungen unten stammen aus dem Übersichtsplan HSH_R104_Wandbild_Plan_A1.pdf.</p>
+    <p class="howto"><b>So wird die Farbwelt sichtbar:</b> Unten stehen sechs Farbfelder, eines für jede Farbwelt. Ein Klick auf ein Farbfeld zeigt das ganze Wandbild in dieser Farbwelt: die Gesamtabwicklung, jede Wand, die Decke und die einzelnen Blüten in den Blättern 1 bis 4. Mit „Nächste →“ lassen sich alle Farbwelten nacheinander durchsehen.</p>
   </div>
 
   <div class="full ex" id="explorer">
     <div class="cw-bar" role="group" aria-label="Farbwelt wählen">
-      <div class="cw-lead"><strong>Farbwelt wählen</strong><span>Klick auf eine Farbe färbt alle Blätter neu ein.</span></div>
+      <div class="cw-lead"><span class="cw-label">Farbwelt wählen</span><span class="cw-count" id="cwCount">01 / 06</span><span class="cw-help">↓ Farbfeld anklicken, um das Wandbild in dieser Farbwelt zu sehen</span></div>
+      <div class="cw-modes" role="group" aria-label="Farbwerte anzeigen als"><span>Werte</span><button type="button" data-mode="rgb" aria-pressed="true">HEX / RGB</button><button type="button" data-mode="cmyk" aria-pressed="false">CMYK</button><button type="button" data-mode="ral" aria-pressed="false">RAL</button></div>
       <div class="cw-chips" id="cwChips"></div>
-      <button class="cta" type="button" id="cwNext">Nächste Farbwelt <span aria-hidden="true">→</span></button>
+      <div class="mixer" id="mixer">
+        <div class="mx-head"><span class="cw-label">Farbschieber</span><span class="mx-help">Regler ziehen, um stufenlos zwischen den Farbwelten zu mischen</span><strong id="mxName">türkis-rot</strong></div>
+        <div class="mx-track"><input type="range" id="mx" min="0" max="500" step="1" value="0" aria-label="Farbschieber zwischen den Farbwelten" aria-valuetext="türkis-rot"></div>
+        <div class="mx-ticks" id="mxTicks" aria-hidden="true"></div>
+        <ul class="mx-sw" id="mxSw"></ul>
+      </div>
+      <button class="cw-next" type="button" id="cwNext">Nächste <span aria-hidden="true">→</span></button>
     </div>
 
     <div class="sheets" role="tablist" aria-label="Planblätter">
@@ -489,6 +716,7 @@ footer b{display:block;color:var(--fg);font-weight:500}
     <!-- Blatt 4 -->
     <section class="sheet" role="tabpanel" id="blatt4" aria-labelledby="tab4" hidden>
       <div class="cmp" id="cmpGrid"></div>
+      <p class="fine cmp-note">CMYK: umgerechnet für Offsetdruck auf gestrichenem Papier (FOGRA39, ISO Coated v2). RAL: nächstliegender Farbton aus RAL Classic, ΔE gibt den Abstand an (unter 2 kaum sichtbar, über 5 deutlich). Alle Werte sind Näherungen und vor der Produktion am Farbfächer zu prüfen.</p>
       <p class="fine cmp-note">Ausschnitt Wand B, Achse A bis Pfeiler neben Ta-104-1, ab +1,30 m bis Deckenkante, M 1:20. Alle Farbwelten nutzen dieselbe Vektorgeometrie. Im SVG ist jede Farbe eine eigene Klasse.</p>
     </section>
   </div>
@@ -496,6 +724,28 @@ footer b{display:block;color:var(--fg);font-weight:500}
   <div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Vergrößerte Ansicht">
     <div class="lb-bar"><span id="lbCap"></span><span class="lb-actions"><button type="button" id="lbZoom">Originalgröße</button><button type="button" id="lbClose" aria-label="Schließen">✕</button></span></div>
     <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="station" id="patina">
+  <div class="when"><b>Station 7</b><span class="date">Nächster Schritt</span></div>
+  <div class="body">
+    <h2>Patina nach dem handgemalten Duktus</h2>
+    <p>Zum Schluss erhält das Wandbild eine Patina, die dem handgemalten Duktus der Originalfassung nahekommt. Die Vektorzeichnung liefert die exakte Geometrie. Die Patina nimmt ihr die digitale Glätte und lässt die Flächen wieder wirken wie mit dem Pinsel auf Kalkputz gemalt.</p>
+    <p>Grundlage sind die Befundfotos: der unregelmäßige Pinselrand der C-Bögen und die wolkige Deckkraft der Farben.</p>
+  </div>
+  <div class="full">
+    <div class="res-head"><h3>Merkmale der Patina</h3><span>Gilt für alle sechs Farbwelten</span></div>
+    <div class="anatomy pat">
+      <div><b>Pinselkante</b><p>Konturen laufen leicht unruhig aus, wie ein geführter Pinselstrich statt einer gestochenen Linie.</p></div>
+      <div><b>Strichrichtung</b><p>Feine, gerichtete Strukturen in den Flächen zeigen die Bewegung des Pinsels.</p></div>
+      <div><b>Wolkige Deckkraft</b><p>Die Farben variieren in sich, dichter und lasierender, wie bei Kalk- und Leimfarbe.</p></div>
+      <div><b>Kalkschleier</b><p>Ein heller, ungleichmäßiger Schleier dämpft die Farbwelt, so wie gealterte Wandmalerei wirkt.</p></div>
+      <div><b>Abrieb</b><p>Kleine Fehlstellen lassen den Grund durchscheinen, sparsam gesetzt, damit das Motiv klar bleibt.</p></div>
+      <div><b>Für jede Farbwelt</b><p>Die Patina liegt als eigene Ebene über dem Motiv und funktioniert mit allen sechs Farbwelten.</p></div>
+    </div>
+    <p class="fine">Stärke und Körnung der Patina werden am Probedruck in Originalgröße festgelegt.</p>
   </div>
 </section>
 
@@ -512,8 +762,8 @@ footer b{display:block;color:var(--fg);font-weight:500}
 const ways=[
  {f:'tuerkis-rot',n:'türkis-rot',d:'Collage türkis-rot',c:['#536169','#33423b','#3f4f4b','#4c5e59','#cdb690','#7c4a47'],main:true},
  {f:'rot-beige',n:'rot-beige',d:'Nach Farbstreifen der Collage',c:['#93402e','#1b3323','#9a8b4d','#b0a25c','#eef0df','#404d6d']},
- {f:'rot-gruen',n:'rot-grün',d:'Collage rot-grün',c:['#5d3436','#2c392e','#3c4e3e','#587056','#cbb792','#7f5e55']},
- {f:'rot-blau',n:'rot-blau',d:'Collage rot-blau',c:['#57383b','#2e3249','#414b42','#5d735f','#c4ae88','#2b3050']},
+ {f:'rot-gruen',n:'bordeaux-grün',d:'Collage bordeaux-grün',c:['#5d3436','#2c392e','#3c4e3e','#587056','#cbb792','#7f5e55']},
+ {f:'rot-blau',n:'bordeaux-blau',d:'Collage bordeaux-blau',c:['#57383b','#2e3249','#414b42','#5d735f','#c4ae88','#2b3050']},
  {f:'gruen-1924',n:'grün-1924',d:'Nach kolorierter Aufnahme',c:['#55704f','#3a2c1f','#9b7b4f','#b8955f','#e8cfa6','#7a5733']},
  {f:'befund',n:'Befund',d:'Rostrot, Grün, Ultramarin auf Kalk',c:['#dbd1bf','#3e4b3c','#e3dac9','#d7ccb7','#9b4b2d','#3b5591']}
 ];
@@ -559,7 +809,9 @@ const ways=[
   // Chips
   ways.forEach(w=>{
     const b=document.createElement('button'); b.type='button'; b.className='chip'; b.dataset.cw=w.f;
-    b.innerHTML='<span class="sw" aria-hidden="true"><i style="background:'+w.c[0]+'"></i><i style="background:'+w.c[4]+'"></i><i style="background:'+w.c[5]+'"></i></span>'+w.n;
+    const rgb=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)).join(' ');
+    b.setAttribute('aria-label','Farbwelt '+w.n); b.style.background=w.c[0]; b.style.color=w.c[4];
+    b.innerHTML='<span class="t-name">'+w.n.replace('-','<br>')+'</span><span class="t-mark" aria-hidden="true">●</span><span class="t-go" aria-hidden="true">Ansehen →</span><span class="t-code"></span><span class="t-bands" aria-hidden="true">'+w.c.slice(1).map(x=>'<i style="background:'+x+'"></i>').join('')+'</span>';
     b.addEventListener('click',()=>setCw(w.f));
     chips.appendChild(b);
   });
@@ -573,6 +825,7 @@ const ways=[
     c.innerHTML='<img src="img/b4-'+w.f+'.jpg" alt="Ausschnitt Wand B in der Farbwelt '+w.n+'" loading="lazy" width="1311" height="1400">'+
       '<div class="strip" aria-hidden="true">'+w.c.map(x=>'<i style="background:'+x+'"></i>').join('')+'</div>'+
       '<h4>'+w.n+(w.main?' · Hauptentwurf':'')+'</h4><p>'+w.d+'</p>'+
+      '<ul class="vals" data-w="'+w.f+'"></ul>'+
       '<button type="button" class="cta">Im ganzen Raum ansehen →</button>';
     c.querySelector('.cta').addEventListener('click',()=>{ if(cw!==w.f) setCw(w.f); showTab(1,true); });
     grid.appendChild(c);
@@ -620,16 +873,21 @@ const ways=[
     document.getElementById('motifText').textContent=m.x;
   }
   function setSrc(im){
+    if(window.__mix){ window.__mixImg(im); return; }
     const src=IMG+cw+'-'+im.dataset.k+'.jpg';
     if(im.getAttribute('src')===src) return;
     im.classList.add('loading'); im.onload=()=>im.classList.remove('loading'); im.src=src;
   }
-  function setCw(k){
-    cw=k;
+  function setCw(k,fromMixer){
+    cw=k; window.__mix=null;
+    if(!fromMixer && window.__mixSync) window.__mixSync(k);
+    const cc=document.getElementById('cwCount'); if(cc) cc.textContent=String(ways.findIndex(w=>w.f===k)+1).padStart(2,'0')+' / 06';
     chips.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cw===cw));
     grid.querySelectorAll('.card').forEach(c=>{const on=c.dataset.cw===cw;c.classList.toggle('on',on);c.querySelector('.cta').textContent=on?'Aktive Farbwelt':'Im ganzen Raum ansehen →';});
     document.querySelectorAll('#explorer img[data-k]').forEach(im=>{ if(!im.closest('[hidden]')) setSrc(im); });
   }
+  window.__setCw=setCw; window.__refreshImgs=()=>document.querySelectorAll('#explorer img[data-k]').forEach(im=>{ if(!im.closest('[hidden]')) setSrc(im); });
+  window.__clearActive=()=>{chips.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed','false'));grid.querySelectorAll('.card').forEach(c=>{c.classList.remove('on');c.querySelector('.cta').textContent='Im ganzen Raum ansehen →';});};
   // Tabs
   const tabs=[...document.querySelectorAll('.sheets [role=tab]')];
   function showTab(n,scroll){
@@ -658,6 +916,131 @@ const ways=[
   const h=location.hash.match(/^#blatt([1-4])$/);
   showTab(h?+h[1]:1, false);
 })();
+
+// Ankerpunkte der Stationsnavigation: weiches Scrollen + aktiver Abschnitt
+(function(){
+  const links=[...document.querySelectorAll('nav.toc a[href^="#"]')];
+  const secs=links.map(a=>document.getElementById(a.getAttribute('href').slice(1)));
+  const nav=document.querySelector('nav.toc');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  links.forEach((a,i)=>a.addEventListener('click',e=>{
+    const t=secs[i]; if(!t) return; e.preventDefault();
+    const y=t.getBoundingClientRect().top+window.scrollY-(nav.offsetHeight+8);
+    window.scrollTo({top:y,behavior:reduce?'auto':'smooth'});
+    try{history.replaceState(null,'','#'+t.id);}catch(_){}
+    setOn(i);
+  }));
+  function setOn(i){links.forEach((a,j)=>{a.classList.toggle('on',j===i); if(j===i)a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current');});}
+  function spy(){
+    const line=nav.offsetHeight+40; let cur=-1;
+    secs.forEach((s,i)=>{ if(s && s.getBoundingClientRect().top<=line) cur=i; });
+    setOn(cur);
+  }
+  window.addEventListener('scroll',spy,{passive:true}); spy();
+  const h=location.hash.slice(1), k=secs.findIndex(s=>s&&s.id===h);
+  if(k>=0) setTimeout(()=>links[k].click(),60);
+})();
+
+// ===== Farbwerte: HEX/RGB, CMYK (FOGRA39), RAL Classic =====
+const CONV={"tuerkis-rot": [["g", "#536169", [68, 48, 43, 35], "RAL 7011", "Eisengrau", 3.0], ["pa", "#48565e", [73, 51, 45, 42], "RAL 7011", "Eisengrau", 3.9], ["v", "#7d9098", [53, 32, 31, 15], "RAL 7000", "Fehgrau", 2.6], ["br", "#33423b", [82, 55, 71, 58], "RAL 6012", "Schwarzgrün", 2.3], ["lf", "#33423b", [82, 55, 71, 58], "RAL 6012", "Schwarzgrün", 2.3], ["ha", "#536169", [68, 48, 43, 35], "RAL 7011", "Eisengrau", 3.0], ["bo", "#495a54", [71, 46, 57, 42], "RAL 7010", "Zeltgrau", 5.2], ["b2", "#56685f", [67, 43, 56, 32], "RAL 7009", "Grüngrau", 4.8], ["dk", "#27332e", [82, 55, 69, 76], "RAL 6009", "Tannengrün", 4.3], ["hi", "#cdb690", [22, 27, 47, 2], "RAL 1001", "Beige", 3.3], ["h2", "#a8977c", [37, 36, 52, 9], "RAL 1019", "Graubeige", 4.3], ["ac", "#7e4946", [38, 74, 61, 39], "RAL 3009", "Oxidrot", 6.0]], "rot-beige": [["g", "#93402e", [24, 85, 89, 36], "RAL 3013", "Tomatenrot", 4.9], ["pa", "#a14935", [15, 79, 81, 33], "RAL 3016", "Korallenrot", 3.6], ["v", "#ab5541", [13, 72, 72, 29], "RAL 3016", "Korallenrot", 5.5], ["br", "#1b3323", [80, 31, 85, 85], "RAL 6009", "Tannengrün", 4.2], ["lf", "#1b3323", [80, 31, 85, 85], "RAL 6009", "Tannengrün", 4.2], ["ha", "#c49f82", [24, 38, 50, 5], "RAL 1001", "Beige", 7.2], ["bo", "#9a8b4d", [42, 38, 80, 13], "RAL 1020", "Olivgelb", 5.2], ["b2", "#b0a25c", [36, 30, 75, 5], "RAL 1020", "Olivgelb", 8.4], ["dk", "#404d6d", [77, 58, 19, 44], "RAL 5000", "Violettblau", 2.3], ["hi", "#eef0df", [8, 5, 16, 0], "RAL 9001", "Cremeweiß", 3.1], ["h2", "#c49f82", [24, 38, 50, 5], "RAL 1001", "Beige", 7.2], ["ac", "#675321", [32, 43, 99, 60], "RAL 8008", "Olivbraun", 6.2]], "rot-gruen": [["g", "#5d3436", [45, 85, 62, 58], "RAL 8015", "Kastanienbraun", 4.1], ["pa", "#683b3d", [44, 81, 60, 51], "RAL 8015", "Kastanienbraun", 3.9], ["v", "#7b4d4c", [42, 71, 58, 37], "RAL 8002", "Signalbraun", 7.0], ["br", "#2c392e", [78, 50, 78, 71], "RAL 6009", "Tannengrün", 2.4], ["lf", "#2c392e", [78, 50, 78, 71], "RAL 6009", "Tannengrün", 2.4], ["ha", "#5d3436", [45, 85, 62, 58], "RAL 8015", "Kastanienbraun", 4.1], ["bo", "#3c4e3e", [79, 50, 76, 50], "RAL 6020", "Chromoxidgrün", 3.0], ["b2", "#587056", [67, 38, 69, 29], "RAL 6011", "Resedagrün", 7.7], ["dk", "#253026", [71, 46, 77, 84], "RAL 6007", "Flaschengrün", 3.1], ["hi", "#cbb792", [24, 27, 47, 2], "RAL 1000", "Grünbeige", 3.7], ["h2", "#9d9383", [41, 37, 47, 11], "RAL 1019", "Graubeige", 4.9], ["ac", "#7f5e55", [45, 60, 60, 30], "RAL 8002", "Signalbraun", 5.6]], "rot-blau": [["g", "#57383b", [51, 78, 57, 58], "RAL 8015", "Kastanienbraun", 5.6], ["pa", "#633f43", [48, 75, 55, 51], "RAL 8015", "Kastanienbraun", 5.3], ["v", "#77494c", [43, 73, 55, 40], "RAL 8015", "Kastanienbraun", 7.2], ["br", "#2e3249", [80, 63, 12, 73], "RAL 5011", "Stahlblau", 4.0], ["lf", "#2e3249", [80, 63, 12, 73], "RAL 5011", "Stahlblau", 4.0], ["ha", "#57383b", [51, 78, 57, 58], "RAL 8015", "Kastanienbraun", 5.6], ["bo", "#414b42", [76, 54, 68, 50], "RAL 6006", "Grauoliv", 4.2], ["b2", "#5d735f", [64, 37, 61, 29], "RAL 6011", "Resedagrün", 8.0], ["dk", "#2b3050", [85, 69, 4, 66], "RAL 5013", "Kobaltblau", 2.5], ["hi", "#c4ae88", [26, 30, 51, 4], "RAL 1001", "Beige", 3.5], ["h2", "#8f8a7a", [46, 38, 50, 14], "RAL 7030", "Steingrau", 4.2], ["ac", "#6c484a", [48, 71, 56, 42], "RAL 8015", "Kastanienbraun", 6.2]], "gruen-1924": [["g", "#55704f", [69, 36, 76, 29], "RAL 6025", "Farngrün", 6.3], ["pa", "#4d6848", [72, 38, 79, 34], "RAL 6003", "Olivgrün", 7.1], ["v", "#6d8a66", [59, 27, 65, 19], "RAL 6011", "Resedagrün", 3.2], ["br", "#3a2c1f", [32, 58, 86, 87], "RAL 8014", "Sepiabraun", 4.5], ["lf", "#3a2c1f", [32, 58, 86, 87], "RAL 8014", "Sepiabraun", 4.5], ["ha", "#55704f", [69, 36, 76, 29], "RAL 6025", "Farngrün", 6.3], ["bo", "#9b7b4f", [35, 46, 74, 21], "RAL 1011", "Braunbeige", 5.4], ["b2", "#b8955f", [29, 39, 69, 9], "RAL 1024", "Ockergelb", 3.4], ["dk", "#35271a", [21, 54, 85, 93], "RAL 8014", "Sepiabraun", 6.0], ["hi", "#e8cfa6", [12, 20, 40, 0], "RAL 1014", "Elfenbein", 2.7], ["h2", "#c9a87e", [22, 33, 54, 6], "RAL 1001", "Beige", 2.3], ["ac", "#7a5733", [42, 59, 90, 38], "RAL 8003", "Lehmbraun", 2.9]], "befund": [["g", "#dbd1bf", [18, 17, 27, 0], "RAL 1013", "Perlweiß", 1.9], ["pa", "#d3c8b3", [22, 20, 33, 0], "RAL 1013", "Perlweiß", 4.1], ["v", "#cbbfa7", [25, 24, 38, 0], "RAL 1015", "Hellelfenbein", 5.9], ["br", "#3e4b3c", [78, 52, 76, 51], "RAL 6020", "Chromoxidgrün", 3.4], ["lf", "#3e4b3c", [78, 52, 76, 51], "RAL 6020", "Chromoxidgrün", 3.4], ["ha", "#dbd1bf", [18, 17, 27, 0], "RAL 1013", "Perlweiß", 1.9], ["bo", "#e3dac9", [14, 14, 24, 0], "RAL 1013", "Perlweiß", 0.8], ["b2", "#d7ccb7", [20, 19, 31, 0], "RAL 1013", "Perlweiß", 3.2], ["dk", "#3e4b3c", [78, 52, 76, 51], "RAL 6020", "Chromoxidgrün", 3.4], ["hi", "#9b4b2d", [18, 75, 89, 35], "RAL 8004", "Kupferbraun", 3.2], ["h2", "#3b5591", [84, 62, 0, 24], "RAL 5005", "Signalblau", 5.6], ["ac", "#b87a5e", [19, 53, 60, 18], "RAL 3012", "Beigerot", 6.3]]};
+const ROLE={g:'Grund',pa:'Grundflecken',v:'Adern',br:'Stamm, Äste',lf:'Blätter',ha:'Blütenhof',bo:'Blütenkörper',b2:'Innenwolke',dk:'Kontur dunkel',hi:'Kontur hell',h2:'Kontur hell 2',ac:'Akzent'};
+const GROUP={g:'Grund',br:'Baum',ha:'Blüte'};
+let valMode='rgb';
+function fmtRow(r,mode,short){
+  const [k,hex,cmyk,ral,raln,de]=r;
+  if(mode==='cmyk') return short? 'CMYK:<br>'+cmyk.join(' / ') : 'C '+cmyk[0]+' M '+cmyk[1]+' Y '+cmyk[2]+' K '+cmyk[3];
+  if(mode==='ral') return short? ral+'<br>'+raln : ral+' '+raln+' <em>ΔE '+de.toFixed(1).replace('.',',')+'</em>';
+  const rgb=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)).join(' ');
+  return short? 'HEX: '+hex.toUpperCase()+'<br>RGB: '+rgb : hex.toUpperCase()+' · '+rgb;
+}
+function renderVals(){
+  document.querySelectorAll('.cw-chips .chip').forEach(b=>{const t=b.querySelector('.t-code'); if(t) t.innerHTML=fmtRow(CONV[b.dataset.cw][0],valMode,true);});
+  document.querySelectorAll('.vals').forEach(ul=>{
+    ul.innerHTML=CONV[ul.dataset.w].map(r=>(GROUP[r[0]]?'<li class="grp">'+GROUP[r[0]]+'</li>':'')+'<li><i style="background:'+r[1]+'"></i><span class="r">'+ROLE[r[0]]+'</span><span class="v">'+fmtRow(r,valMode,false)+'</span></li>').join('');
+  });
+  document.querySelectorAll('.cw-modes button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===valMode));
+}
+document.querySelectorAll('.cw-modes button').forEach(b=>b.addEventListener('click',()=>{valMode=b.dataset.mode;renderVals();}));
+renderVals();
+
+// Vorher-Nachher-Regler Patina
+(function(){const box=document.getElementById('cmpslide'),r=document.getElementById('csRange'); if(!box||!r) return;
+  const set=()=>box.style.setProperty('--p',r.value+'%'); r.addEventListener('input',set); set();})();
+
+document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=b.querySelector('.t-go'); if(g) g.textContent=b.getAttribute('aria-pressed')==='true'?'● Aktiv':'Ansehen →';}; new MutationObserver(upd).observe(b,{attributes:true,attributeFilter:['aria-pressed']}); upd();});
+// ===== Farbschieber: stufenlos zwischen den Farbwelten mischen (OKLab) =====
+(function(){
+  const inp=document.getElementById('mx'); if(!inp) return;
+  const ORDER=['g','pa','v','br','lf','ha','bo','b2','dk','hi','h2','ac'];
+  const WAYS=ways.map(w=>w.f);
+  const PAL=WAYS.map(w=>CONV[w].map(r=>r[1]));
+  function hex2rgb(h){return [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));}
+  function lin(c){c/=255;return c<=0.04045?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+  function delin(c){c=c<=0.0031308?12.92*c:1.055*Math.pow(c,1/2.4)-0.055;return Math.max(0,Math.min(255,Math.round(c*255)));}
+  function toOk(h){const [r,g,b]=hex2rgb(h).map(lin);
+    const l=Math.cbrt(0.4122214708*r+0.5363325363*g+0.0514459929*b),m=Math.cbrt(0.2119034982*r+0.6806995451*g+0.1073969566*b),s=Math.cbrt(0.0883024619*r+0.2817188376*g+0.6299787005*b);
+    return [0.2104542553*l+0.7936177850*m-0.0040720468*s,1.9779984951*l-2.4285922050*m+0.4505937099*s,0.0259040371*l+0.7827717662*m-0.8086757660*s];}
+  function fromOk([L,a,b]){const l=(L+0.3963377774*a+0.2158037573*b)**3,m=(L-0.1055613458*a-0.0638541728*b)**3,s=(L-0.0894841775*a-1.2914855480*b)**3;
+    return [delin(4.0767416621*l-3.3077115913*m+0.2309699292*s),delin(-1.2684380046*l+2.6097574011*m-0.3413193965*s),delin(-0.0041960863*l-0.7034186147*m+1.7076147010*s)];}
+  function rgb2hex(c){return '#'+c.map(v=>v.toString(16).padStart(2,'0')).join('');}
+  function hex2lab(h){const [r,g,b]=hex2rgb(h).map(lin);let x=(0.4124*r+0.3576*g+0.1805*b)/0.95047,y=0.2126*r+0.7152*g+0.0722*b,z=(0.0193*r+0.1192*g+0.9505*b)/1.08883;
+    const f=t=>t>0.008856?Math.cbrt(t):7.787*t+16/116;return [116*f(y)-16,500*(f(x)-f(y)),200*(f(y)-f(z))];}
+  function de00(p,q){const [L1,a1,b1]=p,[L2,a2,b2]=q,rad=Math.PI/180;const C1=Math.hypot(a1,b1),C2=Math.hypot(a2,b2),Cb=(C1+C2)/2,G=0.5*(1-Math.sqrt(Cb**7/(Cb**7+25**7)));
+    const a1p=(1+G)*a1,a2p=(1+G)*a2,C1p=Math.hypot(a1p,b1),C2p=Math.hypot(a2p,b2);let h1=Math.atan2(b1,a1p)/rad;if(h1<0)h1+=360;let h2=Math.atan2(b2,a2p)/rad;if(h2<0)h2+=360;
+    const dL=L2-L1,dC=C2p-C1p;let dh=h2-h1;if(C1p*C2p===0)dh=0;else if(dh>180)dh-=360;else if(dh<-180)dh+=360;const dH=2*Math.sqrt(C1p*C2p)*Math.sin(dh*rad/2);
+    const Lb=(L1+L2)/2,Cbp=(C1p+C2p)/2;let hb=Math.abs(h1-h2)<=180?(h1+h2)/2:(h1+h2<360?(h1+h2+360)/2:(h1+h2-360)/2);if(C1p*C2p===0)hb=h1+h2;
+    const T=1-0.17*Math.cos((hb-30)*rad)+0.24*Math.cos(2*hb*rad)+0.32*Math.cos((3*hb+6)*rad)-0.2*Math.cos((4*hb-63)*rad);const dth=30*Math.exp(-(((hb-275)/25)**2)),Rc=2*Math.sqrt(Cbp**7/(Cbp**7+25**7));
+    const Sl=1+0.015*(Lb-50)**2/Math.sqrt(20+(Lb-50)**2),Sc=1+0.045*Cbp,Sh=1+0.015*Cbp*T,Rt=-Math.sin(2*dth*rad)*Rc;return Math.sqrt((dL/Sl)**2+(dC/Sc)**2+(dH/Sh)**2+Rt*(dC/Sc)*(dH/Sh));}
+  const RALT=[["RAL 1000", "#CDBA88"], ["RAL 1001", "#D0B084"], ["RAL 1002", "#D2AA6D"], ["RAL 1003", "#F9A800"], ["RAL 1004", "#E49E00"], ["RAL 1005", "#CB8E00"], ["RAL 1006", "#E29000"], ["RAL 1007", "#E88C00"], ["RAL 1011", "#AF804F"], ["RAL 1012", "#DDAF27"], ["RAL 1013", "#E3D9C6"], ["RAL 1014", "#DDC49A"], ["RAL 1015", "#E6D2B5"], ["RAL 1016", "#F1DD38"], ["RAL 1017", "#F6A950"], ["RAL 1018", "#FACA30"], ["RAL 1019", "#A48F7A"], ["RAL 1020", "#A08F65"], ["RAL 1021", "#F6B600"], ["RAL 1023", "#F7B500"], ["RAL 1024", "#BA8F4C"], ["RAL 1027", "#A77F0E"], ["RAL 1028", "#FF9B00"], ["RAL 1032", "#E2A300"], ["RAL 1033", "#F99A1C"], ["RAL 1034", "#EB9C52"], ["RAL 1037", "#F09200"], ["RAL 2000", "#DD7907"], ["RAL 2001", "#BE4E20"], ["RAL 2002", "#C63927"], ["RAL 2003", "#FA842B"], ["RAL 2004", "#E75B12"], ["RAL 2008", "#F3752C"], ["RAL 2009", "#E15501"], ["RAL 2010", "#D4652F"], ["RAL 2011", "#EC7C25"], ["RAL 2012", "#DB6A50"], ["RAL 2017", "#FA4402"], ["RAL 3000", "#AB2524"], ["RAL 3001", "#A02128"], ["RAL 3002", "#A1232B"], ["RAL 3003", "#8D1D2C"], ["RAL 3004", "#701F29"], ["RAL 3005", "#5E2028"], ["RAL 3007", "#402225"], ["RAL 3009", "#703731"], ["RAL 3011", "#7E292C"], ["RAL 3012", "#CB8D73"], ["RAL 3013", "#9C322E"], ["RAL 3014", "#D47479"], ["RAL 3015", "#E1A6AD"], ["RAL 3016", "#AC4034"], ["RAL 3017", "#D3545F"], ["RAL 3018", "#D14152"], ["RAL 3020", "#C1121C"], ["RAL 3022", "#D56D56"], ["RAL 3027", "#B42041"], ["RAL 3028", "#E72512"], ["RAL 3031", "#AC323B"], ["RAL 4001", "#8A5A83"], ["RAL 4002", "#933D50"], ["RAL 4003", "#D15B8F"], ["RAL 4004", "#691639"], ["RAL 4005", "#83639D"], ["RAL 4006", "#992572"], ["RAL 4007", "#4A203B"], ["RAL 4008", "#904684"], ["RAL 4009", "#A38995"], ["RAL 4010", "#C63678"], ["RAL 5000", "#384C70"], ["RAL 5001", "#1F4764"], ["RAL 5002", "#2B2C7C"], ["RAL 5003", "#2A3756"], ["RAL 5004", "#1D1F2A"], ["RAL 5005", "#154889"], ["RAL 5007", "#41678D"], ["RAL 5008", "#313C48"], ["RAL 5009", "#2E5978"], ["RAL 5010", "#13447C"], ["RAL 5011", "#232C3F"], ["RAL 5012", "#3481B8"], ["RAL 5013", "#232D53"], ["RAL 5014", "#6C7C98"], ["RAL 5015", "#2874B2"], ["RAL 5017", "#0E518D"], ["RAL 5018", "#21888F"], ["RAL 5019", "#1A5784"], ["RAL 5020", "#0B4151"], ["RAL 5021", "#07737A"], ["RAL 5022", "#2F2A5A"], ["RAL 5023", "#4D668E"], ["RAL 5024", "#6A93B0"], ["RAL 6000", "#327662"], ["RAL 6001", "#28713E"], ["RAL 6002", "#276235"], ["RAL 6003", "#4B573E"], ["RAL 6004", "#0E4243"], ["RAL 6005", "#0F4336"], ["RAL 6006", "#40433B"], ["RAL 6007", "#283424"], ["RAL 6008", "#35382E"], ["RAL 6009", "#26392F"], ["RAL 6010", "#3E753B"], ["RAL 6011", "#68825B"], ["RAL 6012", "#31403D"], ["RAL 6013", "#797C5A"], ["RAL 6014", "#444337"], ["RAL 6015", "#3D403A"], ["RAL 6016", "#026A52"], ["RAL 6017", "#468641"], ["RAL 6018", "#48A43F"], ["RAL 6019", "#B7D9B1"], ["RAL 6020", "#354733"], ["RAL 6021", "#86A47C"], ["RAL 6022", "#3E3C32"], ["RAL 6024", "#008754"], ["RAL 6025", "#53753C"], ["RAL 6026", "#005D52"], ["RAL 6027", "#81C0BB"], ["RAL 6028", "#2D5546"], ["RAL 6029", "#007243"], ["RAL 6032", "#0F8558"], ["RAL 6033", "#478A84"], ["RAL 6034", "#7FB0B2"], ["RAL 6037", "#25E712"], ["RAL 6038", "#00F700"], ["RAL 7000", "#7E8B92"], ["RAL 7001", "#8F999F"], ["RAL 7002", "#817F68"], ["RAL 7003", "#7A7B6D"], ["RAL 7004", "#9EA0A1"], ["RAL 7005", "#6B716F"], ["RAL 7006", "#756F61"], ["RAL 7008", "#746643"], ["RAL 7009", "#5B6259"], ["RAL 7010", "#575D57"], ["RAL 7011", "#555D61"], ["RAL 7012", "#596163"], ["RAL 7013", "#555548"], ["RAL 7015", "#51565C"], ["RAL 7016", "#373F43"], ["RAL 7021", "#2E3234"], ["RAL 7022", "#4B4D46"], ["RAL 7023", "#818479"], ["RAL 7024", "#474A50"], ["RAL 7026", "#374447"], ["RAL 7030", "#939388"], ["RAL 7031", "#5D6970"], ["RAL 7032", "#B9B9A8"], ["RAL 7033", "#818979"], ["RAL 7034", "#939176"], ["RAL 7035", "#CBD0CC"], ["RAL 7036", "#9A9697"], ["RAL 7037", "#7C7F7E"], ["RAL 7038", "#B4B8B0"], ["RAL 7039", "#6B695F"], ["RAL 7040", "#9DA3A6"], ["RAL 7042", "#8F9695"], ["RAL 7043", "#4E5451"], ["RAL 7044", "#BDBDB2"], ["RAL 7045", "#91969A"], ["RAL 7046", "#82898E"], ["RAL 7047", "#CFD0CF"], ["RAL 8000", "#887142"], ["RAL 8001", "#9C6B30"], ["RAL 8002", "#7B5141"], ["RAL 8003", "#80542F"], ["RAL 8004", "#8F4E35"], ["RAL 8007", "#6F4A2F"], ["RAL 8008", "#6F4F28"], ["RAL 8011", "#5A3A29"], ["RAL 8012", "#673831"], ["RAL 8014", "#49392D"], ["RAL 8015", "#633A34"], ["RAL 8016", "#4C2F26"], ["RAL 8017", "#44322D"], ["RAL 8019", "#3F3A3A"], ["RAL 8022", "#211F20"], ["RAL 8023", "#A65E2F"], ["RAL 8024", "#79553C"], ["RAL 8025", "#755C49"], ["RAL 8028", "#4E3B2B"], ["RAL 9001", "#EFEBDC"], ["RAL 9002", "#DDDED4"], ["RAL 9003", "#F4F8F4"], ["RAL 9004", "#2E3032"], ["RAL 9005", "#0A0A0D"], ["RAL 9010", "#F7F9EF"], ["RAL 9011", "#292C2F"], ["RAL 9012", "#FFFDE6"], ["RAL 9016", "#F7FBF5"], ["RAL 9017", "#2A2D2F"], ["RAL 9018", "#CFD3CD"]].map(([c,h])=>[c,hex2lab(h)]);
+  const RDE={"RAL 1000": "Grünbeige", "RAL 1001": "Beige", "RAL 1011": "Braunbeige", "RAL 1013": "Perlweiß", "RAL 1014": "Elfenbein", "RAL 1015": "Hellelfenbein", "RAL 1019": "Graubeige", "RAL 1020": "Olivgelb", "RAL 1024": "Ockergelb", "RAL 3009": "Oxidrot", "RAL 3012": "Beigerot", "RAL 3013": "Tomatenrot", "RAL 3016": "Korallenrot", "RAL 5000": "Violettblau", "RAL 5005": "Signalblau", "RAL 5011": "Stahlblau", "RAL 5013": "Kobaltblau", "RAL 6003": "Olivgrün", "RAL 6006": "Grauoliv", "RAL 6007": "Flaschengrün", "RAL 6009": "Tannengrün", "RAL 6011": "Resedagrün", "RAL 6012": "Schwarzgrün", "RAL 6020": "Chromoxidgrün", "RAL 6025": "Farngrün", "RAL 7000": "Fehgrau", "RAL 7009": "Grüngrau", "RAL 7010": "Zeltgrau", "RAL 7011": "Eisengrau", "RAL 7030": "Steingrau", "RAL 8002": "Signalbraun", "RAL 8003": "Lehmbraun", "RAL 8004": "Kupferbraun", "RAL 8008": "Olivbraun", "RAL 8014": "Sepiabraun", "RAL 8015": "Kastanienbraun", "RAL 9001": "Cremeweiß", "RAL 7016": "Anthrazitgrau", "RAL 7021": "Schwarzgrau", "RAL 7022": "Umbragrau", "RAL 7024": "Graphitgrau", "RAL 7026": "Granitgrau", "RAL 7031": "Blaugrau", "RAL 7036": "Platingrau", "RAL 7037": "Staubgrau", "RAL 7039": "Quarzgrau", "RAL 7044": "Seidengrau", "RAL 5008": "Graublau", "RAL 5014": "Taubenblau", "RAL 5024": "Pastellblau", "RAL 3005": "Weinrot", "RAL 3007": "Schwarzrot", "RAL 3011": "Braunrot", "RAL 3004": "Purpurrot", "RAL 3014": "Altrosa", "RAL 3015": "Hellrosa", "RAL 8011": "Nussbraun", "RAL 8012": "Rotbraun", "RAL 8016": "Mahagonibraun", "RAL 8017": "Schokoladenbraun", "RAL 8019": "Graubraun", "RAL 8022": "Schwarzbraun", "RAL 8025": "Blassbraun", "RAL 8028": "Terrabraun", "RAL 8001": "Ockerbraun", "RAL 8007": "Rehbraun", "RAL 6002": "Laubgrün", "RAL 6005": "Moosgrün", "RAL 6013": "Schilfgrün", "RAL 6014": "Gelboliv", "RAL 6015": "Schwarzoliv", "RAL 6021": "Blassgrün", "RAL 6022": "Braunoliv", "RAL 6028": "Kieferngrün", "RAL 6004": "Blaugrün", "RAL 6008": "Braungrün", "RAL 6019": "Weißgrün", "RAL 6034": "Pastelltürkis", "RAL 7002": "Olivgrau", "RAL 7003": "Moosgrau", "RAL 7006": "Beigegrau", "RAL 7008": "Khakigrau", "RAL 7013": "Braungrau", "RAL 7032": "Kieselgrau", "RAL 7033": "Zementgrau", "RAL 7034": "Gelbgrau", "RAL 7005": "Mausgrau", "RAL 7012": "Basaltgrau", "RAL 7015": "Schiefergrau", "RAL 7023": "Betongrau", "RAL 1002": "Sandgelb", "RAL 1006": "Maisgelb", "RAL 1017": "Safrangelb", "RAL 9002": "Grauweiß", "RAL 9010": "Reinweiß", "RAL 9005": "Tiefschwarz", "RAL 9011": "Graphitschwarz", "RAL 9004": "Signalschwarz", "RAL 9018": "Papyrusweiß", "RAL 9003": "Signalweiß", "RAL 4007": "Purpurviolett", "RAL 4004": "Bordeauxviolett", "RAL 4009": "Pastellviolett", "RAL 3000": "Feuerrot", "RAL 3002": "Karminrot", "RAL 3003": "Rubinrot", "RAL 5001": "Grünblau", "RAL 5003": "Saphirblau", "RAL 5004": "Schwarzblau", "RAL 5007": "Brillantblau", "RAL 5009": "Azurblau", "RAL 5010": "Enzianblau", "RAL 5020": "Ozeanblau", "RAL 5021": "Wasserblau", "RAL 5023": "Fernblau", "RAL 1012": "Zitronengelb", "RAL 1034": "Pastellgelb"};
+  function nearestRal(h){const l=hex2lab(h);let best=null,bd=1e9;for(const [c,lab] of RALT){const d=de00(l,lab);if(d<bd){bd=d;best=c;}}return [best,bd];}
+  const OK=PAL.map(p=>p.map(toOk));
+  function mixAt(v){const t=v/100,i=Math.min(4,Math.floor(t)),f=t-i;return OK[i].map((a,k)=>{const b=OK[i+1][k];return rgb2hex(fromOk([a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f]));});}
+  function label(v){const t=v/100,i=Math.min(4,Math.floor(t)),f=t-i;if(f<0.005)return ways[i].n;if(f>0.995)return ways[i+1].n;
+    return Math.round((1-f)*100)+' % '+ways[i].n+' · '+Math.round(f*100)+' % '+ways[i+1].n;}
+  inp.style.setProperty('--track','linear-gradient(90deg,'+PAL.map((p,i)=>p[0]+' '+(i*20)+'%').join(',')+')');
+  document.getElementById('mxTicks').innerHTML=ways.map(w=>'<span>'+w.n+'</span>').join('');
+  const cache={};
+  function loadData(url){ if(cache[url]) return cache[url];
+    return cache[url]=new Promise((res,rej)=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;const x=c.getContext('2d');x.drawImage(im,0,0);res(x.getImageData(0,0,c.width,c.height));};im.onerror=rej;im.src=url;});}
+  let curPal=null;
+  window.__mixImg=async function(im){
+    const k=im.dataset.k, pal=curPal; if(!pal) return; const my=(im._job=(im._job||0)+1);
+    const key=k+'|'+pal.join('');
+    if(im.dataset.mixkey===key) return;
+    try{
+      const [idx,base]=await Promise.all([loadData('img/idx/'+k+'.png'),loadData('img/cw/tuerkis-rot-'+k+'.jpg')]);
+      if(im._job!==my) return;
+      const P=pal.map(hex2rgb), W=base.width, H=base.height, out=new ImageData(W,H), o=out.data, b=base.data, d=idx.data;
+      for(let p=0,n=W*H*4;p<n;p+=4){const v=d[p];if(v<12){const c=P[v];o[p]=c[0];o[p+1]=c[1];o[p+2]=c[2];}else{o[p]=b[p];o[p+1]=b[p+1];o[p+2]=b[p+2];}o[p+3]=255;}
+      const c=document.createElement('canvas');c.width=W;c.height=H;c.getContext('2d').putImageData(out,0,0);
+      c.toBlob(bl=>{ if(im._job!==my||!bl) return; const u=URL.createObjectURL(bl); const old=im._blob; im._blob=u; im.dataset.mixkey=key; im.src=u; if(old) setTimeout(()=>URL.revokeObjectURL(old),2000); },'image/jpeg',0.9);
+    }catch(e){}
+  };
+  function swatches(pal){
+    document.getElementById('mxSw').innerHTML=pal.map((h,k)=>{const [r,de]=nearestRal(h);return '<li><i style="background:'+h+'"></i><span class="r">'+ROLE[ORDER[k]]+'</span><span class="v">'+h.toUpperCase()+'</span><span class="v">'+r+(RDE[r]?' '+RDE[r]:'')+' <em>ΔE '+de.toFixed(1).replace('.',',')+'</em></span></li>';}).join('');
+  }
+  let raf=0;
+  function onInput(){ cancelAnimationFrame(raf); raf=requestAnimationFrame(()=>{
+    const v=+inp.value, t=v/100, i=Math.round(t);
+    const name=label(v); document.getElementById('mxName').textContent=name; inp.setAttribute('aria-valuetext',name);
+    const pal=mixAt(v); swatches(pal);
+    if(Math.abs(t-i)<0.005){ window.__setCw(ways[i].f,true); return; }
+    curPal=pal; window.__mix=true; window.__clearActive();
+    const cc=document.getElementById('cwCount'); if(cc) cc.textContent='Mischung';
+    document.querySelectorAll('#explorer img[data-k]').forEach(im=>{ delete im.dataset.mixkey; });
+    window.__refreshImgs();
+  }); }
+  inp.addEventListener('input',onInput);
+  window.__mixSync=k=>{ const i=WAYS.indexOf(k); inp.value=i*100; document.getElementById('mxName').textContent=ways[i].n; inp.setAttribute('aria-valuetext',ways[i].n); swatches(PAL[i]); };
+  window.__mixSync('tuerkis-rot');
+})();
+
+// Navigation angedockt?
+(function(){const nav=document.querySelector('nav.toc'); if(!nav) return;
+  const top=()=>parseFloat(getComputedStyle(nav).top)||0;
+  const upd=()=>nav.classList.toggle('stuck', nav.getBoundingClientRect().top<=top()+0.5 && window.scrollY>0 && nav.offsetTop>0 && window.scrollY>=nav.offsetTop-top()-1);
+  window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();})();
 </script>
 
 </body>
