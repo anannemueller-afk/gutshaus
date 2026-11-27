@@ -636,7 +636,38 @@ tr.fa-target td{font-weight:500;border-top:1px solid var(--rule)}
 .fa-measure{margin-top:28px}
 .fa-var{display:flex;align-items:baseline;gap:14px;margin:40px 0 0;padding-top:14px;border-top:2px solid var(--rule);font-size:15px;font-weight:400}
 .fa-var span{font-family:"Roboto Mono",ui-monospace,Menlo,monospace;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--on-wine);background:var(--wine);padding:3px 8px}
-.fa-var + .skizze{margin-top:16px}
+.fa-var{flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:72px;padding-top:24px;font-size:clamp(16px,1.5vw,19px)}
+.fa-var span{white-space:nowrap;font-size:clamp(14px,1.6vw,19px);letter-spacing:.1em;padding:12px 20px}
+.fa-var + .skizze{margin-top:24px}
+.vars{grid-column:1/-1;min-width:0}
+.vars > p{font-size:1.08rem;line-height:1.5;max-width:62ch;margin:0 0 14px}
+.vars > p.varA-lead{margin:16px 0 24px}
+.vars > .fa-var:first-child{margin-top:0}
+.vars .ncs{margin-bottom:24px}
+.va-cmp-wrap{display:flex;flex-direction:column;align-items:center;gap:20px;margin:24px 0 48px;text-align:center}
+.va-cmp-wrap > div:first-child{width:min(100%,480px)}
+.va-cmp-text{max-width:56ch}
+.va-cmp-text p,.va-cmp-text .kicker{margin-inline:auto;text-align:center}
+.va-cmp-wrap figcaption{margin-top:8px}
+.va-cmp .cs-tag{top:10px;font-size:10px;padding:4px 8px}.va-cmp .cs-l{left:10px}.va-cmp .cs-r{right:10px}
+.va-cmp-text p{margin:0 0 12px;max-width:52ch}
+.va-cmp-text .kicker{margin-bottom:8px}
+.vars h3.r3-title{font-family:var(--f-display);font-weight:300;font-size:clamp(1.6rem,2.8vw,2.4rem);letter-spacing:-.02em;line-height:1.05;text-transform:none;color:var(--fg);margin:6px 0 0}
+
+
+.varA-pair{display:grid;grid-template-columns:minmax(0,42.3fr) minmax(0,67.5fr);gap:32px 5%;align-items:end;margin-bottom:128px}
+.varA-pair figure{margin:0}
+.varA-pair img{width:100%;height:auto;display:block}
+.zoom-x{position:relative;display:block;padding:0;border:0;background:none;cursor:zoom-in;width:100%}
+.zoom-x img{transition:filter .2s}
+.zoom-x:hover img{filter:brightness(1.05)}
+.zx-badge{position:absolute;right:10px;bottom:10px;padding:6px 10px;background:rgba(17,17,17,.72);color:#fff;font:500 11px var(--f-body);letter-spacing:.06em;text-transform:uppercase;opacity:.85;transition:opacity .2s;pointer-events:none}
+.zoom-x:hover .zx-badge,.zoom-x:focus-visible .zx-badge{opacity:1}
+.zoom-x:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+.lb-nav{display:flex;gap:8px}
+.lb-stage:not(.big) img.fill{width:100%;height:100%;max-width:none;max-height:none;object-fit:contain}
+.lb-nav[hidden]{display:none!important}
+@media (max-width:520px){.varA-pair{grid-template-columns:minmax(0,1fr)}}
 .sk-side figcaption{margin-top:6px}
 .fa-sec{margin-top:24px}
 .fa-cards{grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr))}
@@ -872,9 +903,9 @@ tr.fa-target td{font-weight:500;border-top:1px solid var(--rule)}
         <tr class="fa-target"><td>Foto 1924 (gemessen)</td><td class="m">41</td><td class="m">27</td><td class="m">55</td><td class="m">105</td><td>Stamm &lt; Grund &lt; Blüte &lt; Kontur</td><td class="m">–</td></tr>
         <tr><td>grün-1924</td><td class="m">64</td><td class="m">29</td><td class="m">71</td><td class="m">126</td><td class="fa-ok">ja</td><td class="m">16</td></tr>
         <tr><td>türkis-rot</td><td class="m">67</td><td class="m">43</td><td class="m">58</td><td class="m">110</td><td class="fa-no">nein · Grund heller als Blüte</td><td class="m">13</td></tr>
-        <tr><td>Variante A – NCS Orientierung</td><td class="m">80</td><td class="m">48</td><td class="m">47</td><td class="m">129</td><td class="fa-no">nein · Grund heller als Stamm und Blüte</td><td class="m">23</td></tr>
+        <tr><td>Variante B – NCS Orientierung</td><td class="m">80</td><td class="m">48</td><td class="m">47</td><td class="m">129</td><td class="fa-no">nein · Grund heller als Stamm und Blüte</td><td class="m">23</td></tr>
         <tr><td>Befund (heller Kalkgrund)</td><td class="m">134</td><td class="m">46</td><td class="m">140</td><td class="m">48</td><td class="fa-no">nein · Grund hell statt dunkel</td><td class="m">64</td></tr>
-        <tr><td>Variante B – Fotoanalyse</td><td class="m">42</td><td class="m">23</td><td class="m">60</td><td class="m">111</td><td class="fa-ok">ja</td><td class="m">4</td></tr>
+        <tr><td>Variante A – Fotoanalyse</td><td class="m">42</td><td class="m">23</td><td class="m">60</td><td class="m">111</td><td class="fa-ok">ja</td><td class="m">4</td></tr>
       </tbody>
     </table></div>
     <p class="fine">Grauwerte auf der Skala des Fotos (Papier ≈ 150). Die Rekonstruktion wurde auf die Messung abgestimmt, ihr Treffer ist also gewollt. Der Test zeigt nur, wie nah eine Farbwelt am Erscheinungsbild von 1924 liegt. Er sagt nichts darüber, ob sie für den Neuentwurf richtig ist. Die NCS-Variante stützt sich auf den Befund an der Wand. Ihr heller blauer Grund ergibt eine andere Hell-Dunkel-Folge als das Foto. Diese Abweichung ist bei der Wahl der Variante abzuwägen.</p>
@@ -914,40 +945,79 @@ tr.fa-target td{font-weight:500;border-top:1px solid var(--rule)}
   <div class="when"><b>Station 7</b></div>
   <div class="body">
     <h2>Erste Skizze des Musterverlaufs</h2>
-    <p>Aus allen Quellen entstand ein durchgehendes Wandbild für R104. Zehn Bäume wachsen aus den Pfeilern zwischen den Öffnungen von Wand B, C und D. Ihre Kronen laufen über die Vouten in die Decke und schließen dort als Himmel aus Blüten und Blättern.</p>
-    <p>Alle Maße stammen aus den Vektordaten von H44-715, Index D. Die Abbildungen unten stammen aus dem Übersichtsplan HSH_R104_Wandbild_Plan_A1.pdf.</p>
-    <p>Für die Farbigkeit gibt es zwei Herleitungen. Variante A folgt den NCS-Angaben und der Skizze der Restaurierung, die vom Befund an der Wand ausgehen. Variante B folgt der Fotoanalyse in Station 6, die vom Raum ausgeht, wie er 1924 aussah. Beide liegen auf derselben Vektorgeometrie und lassen sich unten im Wandbild und im 3D-Raum vergleichen.</p>
-    <div class="fa-var"><span>Variante A – NCS Orientierung</span>Skizze und NCS-Angaben der Restaurierung</div>
-    <div class="skizze">
-      <figure class="sk-main"><img src="img/skizze-ncs-1.jpg" alt="Skizze des Musterverlaufs auf dem Pfeiler zwischen Fenster und Tür: ein Baum mit rotbraunem Stamm wächst nach oben, rote Wolkenblüten mit cremefarbenen Konturen und grüne Blätter auf kräftig blauem Grund" width="951" height="1654" loading="lazy"></figure>
-      <div class="sk-side">
-        <figure><img src="img/skizze-ncs-2.jpg" alt="Gesamtansicht der Skizze am Pfeiler mit Fensterbogen und Tür, Blütenhimmel über dem Bogen" width="394" height="575" loading="lazy"></figure>
-        <div class="sk-text">
-          <p class="kicker">Variante A – NCS Orientierung</p>
-          <p>Die Skizze zeigt den Musterverlauf in den drei NCS-Tönen auf dem historischen Foto: Blau als durchgehender Grund, Rotbraun für Stämme, Äste und Blüten, Grün für die Blätter. Die Blüten sind mit hellen, cremefarbenen C-Bögen gefasst wie in der originalen Pinselfassung. Ergänzend sind Ocker- und Cremetöne für die Blütenkonturen denkbar.</p>
-          <p>Der Baum wächst aus dem Pfeiler zwischen Fenster und Tür und öffnet sich über dem Bogen in den Blütenhimmel.</p>
-        </div>
-      </div>
+    <p>Grundlage für die Reproduktion als Digitaldruck sind drei Ausschnitte aus dem Foto von 1924. Sie wurden nachgeschärft und per Bildabgleich im Foto verortet. Jeder Ausschnitt zeigt eine Fläche von 0,79 × 1,87 m auf Wand B in doppelter Fotoauflösung. Aus ihnen werden die Druckvorlagen in Originalgröße nachempfunden, formtreu zum Foto, aber mit flach gemalten Farbflächen statt errechneter Fotopixel.</p>
+    <div class="grid g3 repro">
+      <figure><img src="img/repro-ausschnitt-1.jpg" alt="Ausschnitt 1 aus dem Foto 1924: aufsteigender Stamm mit großen, mehrfach konturierten Wolkenblüten" width="426" height="1010" loading="lazy"><figcaption><b>Ausschnitt 1</b> · links neben der Ofennische</figcaption></figure>
+      <figure><img src="img/repro-ausschnitt-2.jpg" alt="Ausschnitt 2 aus dem Foto 1924: verzweigter Stamm, dicht mit Wolkenblüten besetzt" width="426" height="1010" loading="lazy"><figcaption><b>Ausschnitt 2</b> · rechts neben der Ofennische, über der Tür</figcaption></figure>
+      <figure><img src="img/repro-ausschnitt-3.jpg" alt="Ausschnitt 3 aus dem Foto 1924: Wolkenblüten über der Ofennische, hochkant dargestellt" width="426" height="1010" loading="lazy"><figcaption><b>Ausschnitt 3</b> · über der Ofennische, hochkant dargestellt</figcaption></figure>
     </div>
-    <div class="fa-var"><span>Variante B – Fotoanalyse</span>Hochzeitsfoto 1924</div>
-    <div class="skizze">
-      <figure class="sk-main"><img src="img/fa-detail-farbe.jpg" alt="Pfeiler links vom Ofen im Foto von 1924, eingefärbt nach der Fotoanalyse: ochsenblutroter Grund, schwarzbraune Stämme, grüne Blüten mit cremefarbenen C-Bögen" width="760" height="954" loading="lazy"></figure>
-      <div class="sk-side">
-        <figure><img src="img/fa-detail-orig.jpg" alt="Derselbe Ausschnitt im schwarzweißen Original von 1924" width="760" height="954" loading="lazy"><figcaption>Quelle: derselbe Ausschnitt im Original</figcaption></figure>
-        <div class="sk-text">
-          <p class="kicker">Variante B – Fotoanalyse</p>
-          <p>Die Farben sind aus den Grauwerten des Fotos hergeleitet, unter der Annahme einer rotblinden, orthochromatischen Platte: Ochsenblutrot als dunkler Grund, Schwarzbraun für Stämme und Konturen, Resedagrün in den Blüten, Chamois für die hellen C-Bögen.</p>
-          <p>Auf die Platte von 1924 zurückgerechnet ergibt diese Palette wieder fast genau das Originalfoto. Herleitung und Grenzen stehen in Station 6.</p>
-        </div>
-      </div>
-    </div>
-    <p class="howto"><b>So wird die Farbwelt sichtbar:</b> Direkt darunter stehen die Farbtöne beider Varianten: A nach den NCS-Angaben (Blau als Grund, Grün und Rotbraun im Motiv) und B nach der Fotoanalyse (Ochsenblutrot als Grund, Grün und Chamois im Motiv). „Im Wandbild und 3D-Raum ansehen“ färbt alles in den Tönen der jeweiligen Variante. Darunter stehen fünf Farbfelder, eines für jede Farbwelt, die ersten beiden für Variante A und B. Ein Klick auf ein Farbfeld zeigt das ganze Wandbild in dieser Farbwelt: die Gesamtabwicklung, jede Wand, die Decke und die einzelnen Blüten in den Blättern 1 bis 4. Mit „Nächste →“ lassen sich alle Farbwelten nacheinander durchsehen.</p>
+    <div class="tbl" style="margin-top:24px"><table>
+      <thead><tr><th>Ausschnitt</th><th>Lage auf Wand B</th><th>Fläche</th><th>Druckdaten bei 180 dpi</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>links neben der Ofennische</td><td class="m">0,79 × 1,87 m</td><td class="m">5.599 × 13.274 px</td></tr>
+        <tr><td>2</td><td>rechts neben der Ofennische, über der Tür</td><td class="m">0,79 × 1,87 m</td><td class="m">5.599 × 13.274 px</td></tr>
+        <tr><td>3</td><td>über der Ofennische, +3,45 bis +4,24 m</td><td class="m">1,87 × 0,79 m</td><td class="m">13.274 × 5.599 px</td></tr>
+      </tbody>
+    </table></div>
+    <p class="fine">Ausschnitt 3 liegt quer über der Nische und ist hier hochkant gezeigt. Ab +3,59 m reicht er in die Voute und wird vor dem Druck nach der Voutengeometrie abgewickelt.</p>
+    <p>Für die Farbigkeit gibt es zwei Herleitungen. Variante A folgt der Fotoanalyse in Station 6, die vom Raum ausgeht, wie er 1924 aussah. Variante B folgt den NCS-Angaben und der Skizze der Restaurierung, die vom Befund an der Wand ausgehen. Beide liegen auf derselben Vektorgeometrie und lassen sich unten im Wandbild und im 3D-Raum vergleichen.</p>
   </div>
-
-  <div class="full ex" id="explorer">
+  <div class="vars">
+    <div class="fa-var"><span>Variante A – Fotoanalyse</span>Palette nach dem Hochzeitsfoto 1924</div>
+    <div class="va-cmp-wrap">
+      <div>
+        <div class="cmpslide va-cmp" id="vbCmp" style="--p:50%">
+          <img src="img/varB-cmp-rekonstruktion.jpg" alt="Rekonstruktion des Ausschnitts in Variante A: ochsenblutroter Grund, schwarzbraune Stämme, Wolkenblüten mit chamoisfarbenen C-Bögen und resedagrünen Blättern" width="795" height="1841" loading="lazy">
+          <div class="cs-before"><img src="img/varA-cmp-original.jpg" alt="" width="795" height="1841" loading="lazy"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Vergleich Originalausschnitt 1924 und Rekonstruktion Variante A: Regler schieben">
+          <div class="cs-line"><i aria-hidden="true">↔</i></div>
+          <span class="cs-tag cs-l">Original 1924</span><span class="cs-tag cs-r">Rekonstruktion</span>
+        </div>
+        <figcaption>Regler ziehen: links der Originalausschnitt, rechts die Rekonstruktion in Variante A</figcaption>
+      </div>
+      <div class="va-cmp-text">
+        <p class="kicker">Originalausschnitt und Rekonstruktion</p>
+        <p>Variante A ist dieselbe Ausarbeitung wie Variante B, umgefärbt in die Palette der Fotoanalyse aus Station 6. Formen, Pinselspuren und Hell-Dunkel bleiben dabei erhalten.</p>
+      </div>
+    </div>
+    <p class="varA-lead">Ochsenblutrot bildet den Grund, Schwarzbraun die Stämme. Die Blüten sind innen überwiegend in Ochsenblut gehalten, mit rund 30 % grünen Schwüngen und rund 10 % Schwarzbraun als Akzent, der den chamoisfarbenen C-Bögen folgt. Links steht der Originalausschnitt in dieser Farbigkeit, rechts das Wandbild auf 1,60 m Breite, nach links und rechts um je 30 cm erweitert.</p>
+    <div class="varA-pair">
+      <figure><button class="zoom zoom-x" type="button" data-cap="Originalausschnitt · Variante A – Fotoanalyse" aria-label="Originalausschnitt Variante A vergrößern"><img src="img/varB-ausschnitt.jpg" alt="Originalausschnitt in Variante A: ochsenblutroter Grund, schwarzbraune Stämme, Wolkenblüten innen in Ochsenblut mit grünen Schwüngen und chamoisfarbenen C-Bögen" width="815" height="1928" loading="lazy"><span class="zx-badge" aria-hidden="true">⤢ Vergrößern</span></button><figcaption><b>Originalausschnitt</b> · Variante A</figcaption></figure>
+      <figure><button class="zoom zoom-x" type="button" data-cap="Wandbild 160 × 237 cm, links und rechts um je 30 cm erweitert · Variante A – Fotoanalyse" aria-label="Wandbild 160 × 237 cm Variante A vergrößern"><img src="img/varB-wandbild-160.jpg" alt="Wandbild in Variante A auf 1,60 m Breite: Bäume und Wolkenblüten auf ochsenblutrotem Grund" width="591" height="875" loading="lazy"><span class="zx-badge" aria-hidden="true">⤢ Vergrößern</span></button><figcaption><b>Wandbild 160 × 237 cm</b> · links und rechts um je 30 cm erweitert</figcaption></figure>
+    </div>
+    <section class="ncs fa-sec" id="faSec" aria-labelledby="faTitle">
+      <div class="ncs-head">
+        <div><span class="cw-label">Hochzeitsfoto 1924 · Ochsenblutrot als Grund, Grün und Chamois im Motiv</span><h3 id="faTitle" class="r3-title">Variante A – Fotoanalyse</h3></div>
+        <button class="cta" type="button" id="faApply">Im Wandbild und 3D-Raum ansehen <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="ncs-cards fa-cards" id="faCards"></div>
+      <p class="fine ncs-note">Bildschirmfarben aus der Fotoanalyse (Station 6), RAL ist der nächstliegende Ton aus RAL Classic. Die Helligkeit jedes Tons ist durch das Foto belegt, Farbton und Sättigung sind begründete Annahme. Adern, Innenwolke, zweite Kontur und Akzent sind aus den vier Tönen abgeleitet, der Akzent nach dem Rostrot im Befund.</p>
+    </section>
+    <div class="fa-var"><span>Variante B – NCS Orientierung</span>Skizze und NCS-Angaben der Restaurierung</div>
+    <div class="va-cmp-wrap">
+      <div>
+        <div class="cmpslide va-cmp" id="vaCmp" style="--p:50%">
+          <img src="img/varA-cmp-rekonstruktion.jpg" alt="Rekonstruktion des Ausschnitts in Variante B: blauer Grund, rotbraune Stämme, Wolkenblüten in Rot, Grün und Chamois" width="795" height="1841" loading="lazy">
+          <div class="cs-before"><img src="img/varA-cmp-original.jpg" alt="" width="795" height="1841" loading="lazy"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Vergleich Originalausschnitt 1924 und Rekonstruktion Variante B: Regler schieben">
+          <div class="cs-line"><i aria-hidden="true">↔</i></div>
+          <span class="cs-tag cs-l">Original 1924</span><span class="cs-tag cs-r">Rekonstruktion</span>
+        </div>
+        <figcaption>Regler ziehen: links der Originalausschnitt, rechts die Rekonstruktion in Variante B</figcaption>
+      </div>
+      <div class="va-cmp-text">
+        <p class="kicker">Originalausschnitt und Rekonstruktion</p>
+        <p>Der Originalausschnitt aus dem Foto von 1924 und seine Rekonstruktion in Variante B liegen deckungsgleich übereinander. Mit dem Regler lässt sich prüfen, wie genau Stämme, Blüten und C-Bögen dem Original folgen.</p>
+      </div>
+    </div>
+    <p class="varA-lead">Die erste Ausarbeitung von Variante B zeigt einen blauen Grund nach den NCS-Angaben, Stämme und Blüten in rötlichen Tönen, dazu Grün und Chamois. Links steht der Originalausschnitt in dieser Farbigkeit. Rechts ist das Wandbild auf 1,60 m Breite angelegt, dafür ist der Ausschnitt nach links und rechts um je 30 cm erweitert.</p>
+    <div class="varA-pair">
+      <figure><button class="zoom zoom-x" type="button" data-cap="Originalausschnitt · Variante B – NCS Orientierung" aria-label="Originalausschnitt vergrößern"><img src="img/varA-ausschnitt.jpg" alt="Originalausschnitt aus dem Foto 1924 in Variante B: blauer Grund, rotbraune Stämme, Wolkenblüten in Rot, Grün und Chamois" width="815" height="1928" loading="lazy"><span class="zx-badge" aria-hidden="true">⤢ Vergrößern</span></button><figcaption><b>Originalausschnitt</b> · Variante B</figcaption></figure>
+      <figure><button class="zoom zoom-x" type="button" data-cap="Wandbild 160 × 237 cm, links und rechts um je 30 cm erweitert · Variante B – NCS Orientierung" aria-label="Wandbild 160 × 237 cm vergrößern"><img src="img/varA-wandbild-160.jpg" alt="Wandbild in Variante B auf 1,60 m Breite: der Ausschnitt nach links und rechts um je 30 cm mit Bäumen und Wolkenblüten erweitert" width="591" height="875" loading="lazy"><span class="zx-badge" aria-hidden="true">⤢ Vergrößern</span></button><figcaption><b>Wandbild 160 × 237 cm</b> · links und rechts um je 30 cm erweitert</figcaption></figure>
+    </div>
     <section class="ncs" id="ncs" aria-labelledby="ncsTitle">
       <div class="ncs-head">
-        <div><span class="cw-label">Blau als Grund, Rotbraun und Grün im Motiv</span><h3 id="ncsTitle" class="r3-title">Variante A – NCS Orientierung</h3></div>
+        <div><span class="cw-label">Blau als Grund, Rotbraun und Grün im Motiv</span><h3 id="ncsTitle" class="r3-title">Variante B – NCS Orientierung</h3></div>
         <button class="cta" type="button" id="ncsApply">Im Wandbild und 3D-Raum ansehen <span aria-hidden="true">→</span></button>
       </div>
       <div class="ncs-cards" id="ncsCards"></div>
@@ -955,20 +1025,14 @@ tr.fa-target td{font-weight:500;border-top:1px solid var(--rule)}
         <span class="nc-label">Blütenkonturen, ergänzend denkbar</span>
         <button type="button" data-ct="creme" aria-pressed="true"><i style="background:#ecd2ab"></i><i style="background:#c99a70"></i>Creme</button>
         <button type="button" data-ct="ocker" aria-pressed="false"><i style="background:#d4a24c"></i><i style="background:#a8762f"></i>Ocker</button>
-        <span class="nc-help">Wirkt sofort im Wandbild und im 3D-Raum, wenn Variante A gewählt ist.</span>
+        <span class="nc-help">Wirkt sofort im Wandbild und im 3D-Raum, wenn Variante B gewählt ist.</span>
       </div>
       <p class="fine ncs-note">Die Bildschirmfarben sind aus den NCS-Codes angenähert, RAL ist der nächstliegende Ton aus RAL Classic. Verbindlich ist das NCS-Farbmuster; vor der Produktion am Original-Farbfächer abgleichen. Hellere und dunklere Töne im Motiv (Adern, Blütenrot, cremefarbene Konturen) sind nach der Skizze aus den drei Farben abgeleitet.</p>
     </section>
+    <p class="howto"><b>So wird die Farbwelt sichtbar:</b> Die Farbtöne stehen jeweils direkt bei der Variante: A nach der Fotoanalyse (Ochsenblutrot als Grund, Grün und Chamois im Motiv), B nach den NCS-Angaben (Blau als Grund, Grün und Rotbraun im Motiv). „Im Wandbild und 3D-Raum ansehen“ färbt alles in den Tönen der jeweiligen Variante. Darunter stehen fünf Farbfelder, eines für jede Farbwelt, die ersten beiden für Variante A und B. Ein Klick auf ein Farbfeld zeigt das ganze Wandbild in dieser Farbwelt: die Gesamtabwicklung, jede Wand, die Decke und die einzelnen Blüten in den Blättern 1 bis 4. Mit „Nächste →“ lassen sich alle Farbwelten nacheinander durchsehen.</p>
+  </div>
 
-    <section class="ncs fa-sec" id="faSec" aria-labelledby="faTitle">
-      <div class="ncs-head">
-        <div><span class="cw-label">Hochzeitsfoto 1924 · Ochsenblutrot als Grund, Grün und Chamois im Motiv</span><h3 id="faTitle" class="r3-title">Variante B – Fotoanalyse</h3></div>
-        <button class="cta" type="button" id="faApply">Im Wandbild und 3D-Raum ansehen <span aria-hidden="true">→</span></button>
-      </div>
-      <div class="ncs-cards fa-cards" id="faCards"></div>
-      <p class="fine ncs-note">Bildschirmfarben aus der Fotoanalyse (Station 6), RAL ist der nächstliegende Ton aus RAL Classic. Die Helligkeit jedes Tons ist durch das Foto belegt, Farbton und Sättigung sind begründete Annahme. Adern, Innenwolke, zweite Kontur und Akzent sind aus den vier Tönen abgeleitet, der Akzent nach dem Rostrot im Befund.</p>
-    </section>
-
+  <div class="full ex" id="explorer">
     <div class="cw-bar" role="group" aria-label="Farbwelt wählen">
       <div class="cw-lead"><span class="cw-label">Farbwelt wählen</span><span class="cw-count" id="cwCount">01 / 05</span><span class="cw-help">↓ Farbfeld anklicken, um das Wandbild in dieser Farbwelt zu sehen</span></div>
       <div class="cw-modes" role="group" aria-label="Farbwerte anzeigen als"><span>Werte</span><button type="button" data-mode="rgb" aria-pressed="true">HEX / RGB</button><button type="button" data-mode="cmyk" aria-pressed="false">CMYK</button><button type="button" data-mode="ral" aria-pressed="false">RAL</button></div>
@@ -1078,7 +1142,7 @@ tr.fa-target td{font-weight:500;border-top:1px solid var(--rule)}
   </div>
 
   <div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Vergrößerte Ansicht">
-    <div class="lb-bar"><span id="lbCap"></span><span class="lb-actions"><button type="button" id="lbZoom">Originalgröße</button><button type="button" id="lbClose" aria-label="Schließen">✕</button></span></div>
+    <div class="lb-bar"><span id="lbCap"></span><span class="lb-actions"><span class="lb-nav" id="lbNav" hidden><button type="button" id="lbPrev" aria-label="Vorheriges Bild">←</button><button type="button" id="lbNext" aria-label="Nächstes Bild">→</button></span><button type="button" id="lbZoom">Originalgröße</button><button type="button" id="lbClose" aria-label="Schließen">✕</button></span></div>
     <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
   </div>
 </section>
@@ -1267,14 +1331,20 @@ const ways=[
   // Lightbox
   const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbStage=document.getElementById('lbStage'), lbZ=document.getElementById('lbZoom');
   let lastFocus=null;
-  function openLb(im){ lastFocus=document.activeElement; lbImg.src=im.currentSrc||im.src; lbImg.alt=im.alt; document.getElementById('lbCap').textContent=im.alt+' · Farbwelt '+ways.find(w=>w.f===cw).n; lbStage.classList.remove('big'); lbZ.textContent='Originalgröße'; lb.hidden=false; document.getElementById('lbClose').focus(); }
-  function closeLb(){ lb.hidden=true; lbImg.removeAttribute('src'); if(lastFocus) lastFocus.focus(); }
+  let lbGroup=null, lbIdx=0;
+  function openLb(im,cap,group,idx){ if(lb.hidden) lastFocus=document.activeElement; lbGroup=group||null; lbIdx=idx||0; document.getElementById('lbNav').hidden=!lbGroup||lbGroup.length<2; lbImg.classList.toggle('fill',!!lbGroup); lbImg.src=im.currentSrc||im.src; lbImg.alt=im.alt; document.getElementById('lbCap').textContent=cap||(im.alt+' · Farbwelt '+cwName(cw)); lbStage.classList.remove('big'); lbZ.textContent='Originalgröße'; lb.hidden=false; document.getElementById('lbClose').focus(); }
+  function stepLb(d){ if(!lbGroup) return; lbIdx=(lbIdx+d+lbGroup.length)%lbGroup.length; const z=lbGroup[lbIdx]; openLb(z.querySelector('img'),z.dataset.cap,lbGroup,lbIdx); }
+  function closeLb(){ lb.hidden=true; lbGroup=null; lbImg.removeAttribute('src'); if(lastFocus) lastFocus.focus(); }
   function toggleBig(){ const big=lbStage.classList.toggle('big'); lbZ.textContent=big?'Einpassen':'Originalgröße'; }
   document.querySelectorAll('#explorer .zoom').forEach(z=>z.addEventListener('click',()=>{const im=z.querySelector('img'); if(im&&im.src) openLb(im);}));
+  const zx=[...document.querySelectorAll('.zoom-x')];
+  zx.forEach((z,i)=>z.addEventListener('click',()=>openLb(z.querySelector('img'),z.dataset.cap,zx,i)));
+  document.getElementById('lbPrev').addEventListener('click',()=>stepLb(-1));
+  document.getElementById('lbNext').addEventListener('click',()=>stepLb(1));
   lbImg.addEventListener('click',toggleBig); lbZ.addEventListener('click',toggleBig);
   document.getElementById('lbClose').addEventListener('click',closeLb);
   lbStage.addEventListener('click',e=>{ if(e.target===lbStage) closeLb(); });
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!lb.hidden) closeLb(); });
+  document.addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape') closeLb(); else if(e.key==='ArrowLeft') stepLb(-1); else if(e.key==='ArrowRight') stepLb(1); });
   // Start
   setCw('tuerkis-rot');
   const h=location.hash.match(/^#blatt([1-4])$/);
@@ -1306,7 +1376,10 @@ const ways=[
 })();
 
 // ===== Farbwerte: HEX/RGB, CMYK (FOGRA39), RAL Classic =====
+const VARN={varA:'Variante B – NCS Orientierung',varB:'Variante A – Fotoanalyse'};
+function cwName(k){const w=ways.find(x=>x.f===k);return w?w.n:(VARN[k]||k);}
 const CONV={"tuerkis-rot": [["g", "#536169", [68, 48, 43, 35], "RAL 7011", "Eisengrau", 3.0], ["pa", "#48565e", [73, 51, 45, 42], "RAL 7011", "Eisengrau", 3.9], ["v", "#7d9098", [53, 32, 31, 15], "RAL 7000", "Fehgrau", 2.6], ["br", "#33423b", [82, 55, 71, 58], "RAL 6012", "Schwarzgrün", 2.3], ["lf", "#33423b", [82, 55, 71, 58], "RAL 6012", "Schwarzgrün", 2.3], ["ha", "#536169", [68, 48, 43, 35], "RAL 7011", "Eisengrau", 3.0], ["bo", "#495a54", [71, 46, 57, 42], "RAL 7010", "Zeltgrau", 5.2], ["b2", "#56685f", [67, 43, 56, 32], "RAL 7009", "Grüngrau", 4.8], ["dk", "#27332e", [82, 55, 69, 76], "RAL 6009", "Tannengrün", 4.3], ["hi", "#cdb690", [22, 27, 47, 2], "RAL 1001", "Beige", 3.3], ["h2", "#a8977c", [37, 36, 52, 9], "RAL 1019", "Graubeige", 4.3], ["ac", "#7e4946", [38, 74, 61, 39], "RAL 3009", "Oxidrot", 6.0]], "rot-beige": [["g", "#93402e", [24, 85, 89, 36], "RAL 3013", "Tomatenrot", 4.9], ["pa", "#a14935", [15, 79, 81, 33], "RAL 3016", "Korallenrot", 3.6], ["v", "#ab5541", [13, 72, 72, 29], "RAL 3016", "Korallenrot", 5.5], ["br", "#1b3323", [80, 31, 85, 85], "RAL 6009", "Tannengrün", 4.2], ["lf", "#1b3323", [80, 31, 85, 85], "RAL 6009", "Tannengrün", 4.2], ["ha", "#c49f82", [24, 38, 50, 5], "RAL 1001", "Beige", 7.2], ["bo", "#9a8b4d", [42, 38, 80, 13], "RAL 1020", "Olivgelb", 5.2], ["b2", "#b0a25c", [36, 30, 75, 5], "RAL 1020", "Olivgelb", 8.4], ["dk", "#404d6d", [77, 58, 19, 44], "RAL 5000", "Violettblau", 2.3], ["hi", "#eef0df", [8, 5, 16, 0], "RAL 9001", "Cremeweiß", 3.1], ["h2", "#c49f82", [24, 38, 50, 5], "RAL 1001", "Beige", 7.2], ["ac", "#675321", [32, 43, 99, 60], "RAL 8008", "Olivbraun", 6.2]], "rot-gruen": [["g", "#5d3436", [45, 85, 62, 58], "RAL 8015", "Kastanienbraun", 4.1], ["pa", "#683b3d", [44, 81, 60, 51], "RAL 8015", "Kastanienbraun", 3.9], ["v", "#7b4d4c", [42, 71, 58, 37], "RAL 8002", "Signalbraun", 7.0], ["br", "#2c392e", [78, 50, 78, 71], "RAL 6009", "Tannengrün", 2.4], ["lf", "#2c392e", [78, 50, 78, 71], "RAL 6009", "Tannengrün", 2.4], ["ha", "#5d3436", [45, 85, 62, 58], "RAL 8015", "Kastanienbraun", 4.1], ["bo", "#3c4e3e", [79, 50, 76, 50], "RAL 6020", "Chromoxidgrün", 3.0], ["b2", "#587056", [67, 38, 69, 29], "RAL 6011", "Resedagrün", 7.7], ["dk", "#253026", [71, 46, 77, 84], "RAL 6007", "Flaschengrün", 3.1], ["hi", "#cbb792", [24, 27, 47, 2], "RAL 1000", "Grünbeige", 3.7], ["h2", "#9d9383", [41, 37, 47, 11], "RAL 1019", "Graubeige", 4.9], ["ac", "#7f5e55", [45, 60, 60, 30], "RAL 8002", "Signalbraun", 5.6]], "rot-blau": [["g", "#57383b", [51, 78, 57, 58], "RAL 8015", "Kastanienbraun", 5.6], ["pa", "#633f43", [48, 75, 55, 51], "RAL 8015", "Kastanienbraun", 5.3], ["v", "#77494c", [43, 73, 55, 40], "RAL 8015", "Kastanienbraun", 7.2], ["br", "#2e3249", [80, 63, 12, 73], "RAL 5011", "Stahlblau", 4.0], ["lf", "#2e3249", [80, 63, 12, 73], "RAL 5011", "Stahlblau", 4.0], ["ha", "#57383b", [51, 78, 57, 58], "RAL 8015", "Kastanienbraun", 5.6], ["bo", "#414b42", [76, 54, 68, 50], "RAL 6006", "Grauoliv", 4.2], ["b2", "#5d735f", [64, 37, 61, 29], "RAL 6011", "Resedagrün", 8.0], ["dk", "#2b3050", [85, 69, 4, 66], "RAL 5013", "Kobaltblau", 2.5], ["hi", "#c4ae88", [26, 30, 51, 4], "RAL 1001", "Beige", 3.5], ["h2", "#8f8a7a", [46, 38, 50, 14], "RAL 7030", "Steingrau", 4.2], ["ac", "#6c484a", [48, 71, 56, 42], "RAL 8015", "Kastanienbraun", 6.2]], "gruen-1924": [["g", "#55704f", [69, 36, 76, 29], "RAL 6025", "Farngrün", 6.3], ["pa", "#4d6848", [72, 38, 79, 34], "RAL 6003", "Olivgrün", 7.1], ["v", "#6d8a66", [59, 27, 65, 19], "RAL 6011", "Resedagrün", 3.2], ["br", "#3a2c1f", [32, 58, 86, 87], "RAL 8014", "Sepiabraun", 4.5], ["lf", "#3a2c1f", [32, 58, 86, 87], "RAL 8014", "Sepiabraun", 4.5], ["ha", "#55704f", [69, 36, 76, 29], "RAL 6025", "Farngrün", 6.3], ["bo", "#9b7b4f", [35, 46, 74, 21], "RAL 1011", "Braunbeige", 5.4], ["b2", "#b8955f", [29, 39, 69, 9], "RAL 1024", "Ockergelb", 3.4], ["dk", "#35271a", [21, 54, 85, 93], "RAL 8014", "Sepiabraun", 6.0], ["hi", "#e8cfa6", [12, 20, 40, 0], "RAL 1014", "Elfenbein", 2.7], ["h2", "#c9a87e", [22, 33, 54, 6], "RAL 1001", "Beige", 2.3], ["ac", "#7a5733", [42, 59, 90, 38], "RAL 8003", "Lehmbraun", 2.9]], "befund": [["g", "#dbd1bf", [18, 17, 27, 0], "RAL 1013", "Perlweiß", 1.9], ["pa", "#d3c8b3", [22, 20, 33, 0], "RAL 1013", "Perlweiß", 4.1], ["v", "#cbbfa7", [25, 24, 38, 0], "RAL 1015", "Hellelfenbein", 5.9], ["br", "#3e4b3c", [78, 52, 76, 51], "RAL 6020", "Chromoxidgrün", 3.4], ["lf", "#3e4b3c", [78, 52, 76, 51], "RAL 6020", "Chromoxidgrün", 3.4], ["ha", "#dbd1bf", [18, 17, 27, 0], "RAL 1013", "Perlweiß", 1.9], ["bo", "#e3dac9", [14, 14, 24, 0], "RAL 1013", "Perlweiß", 0.8], ["b2", "#d7ccb7", [20, 19, 31, 0], "RAL 1013", "Perlweiß", 3.2], ["dk", "#3e4b3c", [78, 52, 76, 51], "RAL 6020", "Chromoxidgrün", 3.4], ["hi", "#9b4b2d", [18, 75, 89, 35], "RAL 8004", "Kupferbraun", 3.2], ["h2", "#3b5591", [84, 62, 0, 24], "RAL 5005", "Signalblau", 5.6], ["ac", "#b87a5e", [19, 53, 60, 18], "RAL 3012", "Beigerot", 6.3]]};
+CONV.varA=[['g','#2b5394']];CONV.varB=[['g','#843832']];
 const ROLE={g:'Grund',pa:'Grundflecken',v:'Adern',br:'Stamm, Äste',lf:'Blätter',ha:'Blütenhof',bo:'Blütenkörper',b2:'Innenwolke',dk:'Kontur dunkel',hi:'Kontur hell',h2:'Kontur hell 2',ac:'Akzent'};
 const GROUP={g:'Grund',br:'Baum',ha:'Blüte'};
 let valMode='rgb';
@@ -1338,7 +1411,7 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
   const inp=document.getElementById('mx'); if(!inp) return;
   const ORDER=['g','pa','v','br','lf','ha','bo','b2','dk','hi','h2','ac'];
   // Stationen des Farbschiebers in der Reihenfolge der Farbfelder: Variante A, Variante B, dann die übrigen Farbwelten
-  const STOPS=[{k:'ncs',n:'Variante A – NCS Orientierung',t:'Variante A'},{k:'fa',n:'Variante B – Fotoanalyse',t:'Variante B'}].concat(ways.map(w=>({k:w.f,n:w.n,t:w.n,f:w.f})));
+  const STOPS=[{k:'fa',n:'Variante A – Fotoanalyse',t:'Variante A'},{k:'ncs',n:'Variante B – NCS Orientierung',t:'Variante B'}].concat(ways.map(w=>({k:w.f,n:w.n,t:w.n,f:w.f})));
   const palOf=s=>s.k==='ncs'?(window.__ncsPal||[]):s.k==='fa'?(window.__faPal||[]):CONV[s.f].map(r=>r[1]);
   function hex2rgb(h){return [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));}
   function lin(c){c/=255;return c<=0.04045?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
@@ -1539,12 +1612,12 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
   const loader=new T.TextureLoader(); let state={cw:'tuerkis-rot'}, seq=0;
   function applyTex(k,t){t.encoding=T.sRGBEncoding;t.anisotropy=renderer.capabilities.getMaxAnisotropy();t.minFilter=T.LinearMipmapLinearFilter;const old=mats[k].map;mats[k].map=t;mats[k].needsUpdate=true;if(old)old.dispose();dirty=true;}
   function paint(){ if(!started) return; const my=++seq, st=state;
-    const g=st.pal?st.pal[0]:CONV[st.cw][0][1]; wallA.color.set(g).offsetHSL(0,0,-0.06); dirty=true;
+    const g=st.pal?st.pal[0]:CONV[st.cw][0][1]; if(!st.pal&&(st.cw==='varA'||st.cw==='varB')) wallA.color.set('#ffffff'); else wallA.color.set(g).offsetHSL(0,0,-0.06); dirty=true;
     ['b','c','d','decke'].forEach(k=>{
       if(st.pal){ window.__mixCanvas && window.__mixCanvas(k,st.pal).then(c=>{ if(my!==seq||!c) return; applyTex(k,new T.CanvasTexture(c)); }); }
       else loader.load('img/cw/'+st.cw+'-'+k+'.jpg',t=>{ if(my!==seq){t.dispose();return;} applyTex(k,t); });
     });
-    const n=document.getElementById('r3Name'); if(n) n.textContent=st.pal?(document.getElementById('mxName')?.textContent||'Mischung'):ways.find(w=>w.f===st.cw).n;
+    const n=document.getElementById('r3Name'); if(n) n.textContent=st.pal?(document.getElementById('mxName')?.textContent||'Mischung'):cwName(st.cw);
   }
   let tmr=0;
   window.__room3d={set(s){state=s; clearTimeout(tmr); tmr=setTimeout(paint, s.pal?140:0);}};
@@ -1572,9 +1645,9 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
       '<div class="n-vals">HEX: '+n.hex.toUpperCase()+' · RGB: '+rgb+(r[0]?'<br>≈ '+r[0]+' '+r[1]+' (ΔE '+r[2].toFixed(1).replace('.',',')+')':'')+'</div></article>';}).join('');
   // Siebtes Feld in „Farbwelt wählen“
   const chips=document.getElementById('cwChips'), b=document.createElement('button');
-  b.type='button'; b.className='chip chip-ncs'; b.dataset.ncs='1'; b.setAttribute('aria-label','Variante A – NCS Orientierung'); b.setAttribute('aria-pressed','false');
+  b.type='button'; b.className='chip chip-ncs'; b.dataset.ncs='1'; b.setAttribute('aria-label','Variante B – NCS Orientierung'); b.setAttribute('aria-pressed','false');
   b.style.background=NCS[0].hex; b.style.color='#dcc7a8';
-  b.innerHTML='<span class="t-name">Variante A –<br>NCS Orientierung</span><span class="t-go" aria-hidden="true">Ansehen →</span><span class="t-code"></span><span class="t-bands" aria-hidden="true">'+PAL.slice(6,11).map(x=>'<i style="background:'+x+'"></i>').join('')+'</span>';
+  b.innerHTML='<span class="t-name">Variante B –<br>NCS Orientierung</span><span class="t-go" aria-hidden="true">Ansehen →</span><span class="t-code"></span><span class="t-bands" aria-hidden="true">'+PAL.slice(6,11).map(x=>'<i style="background:'+x+'"></i>').join('')+'</span>';
   chips.appendChild(b);
   const rgbOf=h=>[1,3,5].map(k=>parseInt(h.slice(k,k+2),16)).join(' ');
   window.__ncsCode=m=>{const h=NCS[0].hex; if(m==='ral'){const r=window.__nearestRal(h);return r[0]+'<br>'+r[1];} if(m==='cmyk') return 'NCS S 3560-R80B<br>CMYK am Muster prüfen'; return 'NCS S 3560-R80B<br>HEX: '+h.toUpperCase()+' · RGB: '+rgbOf(h);};
@@ -1583,8 +1656,8 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
   const t0=b.querySelector('.t-code'); t0.innerHTML=window.__ncsCode('rgb');
   document.querySelectorAll('.cw-modes button').forEach(x=>x.addEventListener('click',()=>{t0.innerHTML=window.__ncsCode(x.dataset.mode);}));
   function applyNcs(scroll){
-    window.__applyPal&&window.__applyPal(PAL,'Variante A – NCS Orientierung'); window.__mixSync&&window.__mixSync('ncs');
-    const cc=document.getElementById('cwCount'); if(cc) cc.textContent='01 / 05';
+    window.__setCw&&window.__setCw('varA'); window.__mixSync&&window.__mixSync('ncs');
+    const cc=document.getElementById('cwCount'); if(cc) cc.textContent='02 / 05';
     b.setAttribute('aria-pressed','true');
     if(scroll) document.getElementById('room3d').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
   }
@@ -1595,7 +1668,7 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
   const NCSOF={0:'NCS S 3560-R80B',5:'NCS S 3560-R80B',3:'NCS S 6030-Y40R',4:'NCS S 5030-G10Y',7:'NCS S 5030-G10Y'};
   const card=document.createElement('article'); card.className='card card-ncs'; card.dataset.ncs='1';
   card.innerHTML='<img src="img/skizze-ncs-1.jpg" alt="Skizze des Musters in den NCS-Farbtönen" loading="lazy" width="951" height="1654">'+
-    '<div class="strip" aria-hidden="true"></div><h4>Variante A – NCS Orientierung</h4><p>Blau NCS S 3560-R80B als Grund, Rotbraun NCS S 6030-Y40R, Grün NCS S 5030-G10Y</p>'+
+    '<div class="strip" aria-hidden="true"></div><h4>Variante B – NCS Orientierung</h4><p>Blau NCS S 3560-R80B als Grund, Rotbraun NCS S 6030-Y40R, Grün NCS S 5030-G10Y</p>'+
     '<ul class="vals vals-ncs"></ul><button type="button" class="cta">Im ganzen Raum ansehen →</button>';
   document.getElementById('cmpGrid').prepend(card);
   let mode='rgb';
@@ -1624,10 +1697,10 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
   });
 })();
 
-// ===== Variante B: Farbtöne nach Fotoanalyse 1924 =====
+// ===== Variante A: Farbtöne nach Fotoanalyse 1924 =====
 (function(){
   const host=document.getElementById('faCards'); if(!host) return;
-  const NAME='Variante B – Fotoanalyse';
+  const NAME='Variante A – Fotoanalyse';
   const TONES=[
     {name:'Ochsenblutrot',role:'Grund des Wandbilds',hex:'#843832',grey:'Foto ≈ 41 · simuliert 42'},
     {name:'Schwarzbraun',role:'Stämme, Äste, dunkle Konturen',hex:'#2b1f1a',grey:'Foto ≈ 27 · simuliert 23'},
@@ -1646,12 +1719,12 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
       '<div class="n-vals">RGB: '+rgbOf(n.hex)+(r[0]?'<br>≈ '+r[0]+' '+r[1]+' (ΔE '+r[2].toFixed(1).replace('.',',')+')':'')+'<br>'+n.grey+'</div></article>';}).join('');
   // Sechstes Farbfeld
   const chips=document.getElementById('cwChips'), b=document.createElement('button');
-  b.type='button'; b.className='chip chip-fa'; b.dataset.fa='1'; b.setAttribute('aria-label','Variante B – Fotoanalyse'); b.setAttribute('aria-pressed','false');
+  b.type='button'; b.className='chip chip-fa'; b.dataset.fa='1'; b.setAttribute('aria-label','Variante A – Fotoanalyse'); b.setAttribute('aria-pressed','false');
   b.style.background=PAL[0]; b.style.color=PAL[9];
-  b.innerHTML='<span class="t-name">Variante B –<br>Fotoanalyse</span><span class="t-go" aria-hidden="true">Ansehen →</span><span class="t-code"></span><span class="t-bands" aria-hidden="true">'+[3,4,7,9,11].map(i=>'<i style="background:'+PAL[i]+'"></i>').join('')+'</span>';
+  b.innerHTML='<span class="t-name">Variante A –<br>Fotoanalyse</span><span class="t-go" aria-hidden="true">Ansehen →</span><span class="t-code"></span><span class="t-bands" aria-hidden="true">'+[3,4,7,9,11].map(i=>'<i style="background:'+PAL[i]+'"></i>').join('')+'</span>';
   chips.appendChild(b);
   // Reihenfolge: NCS-Orientierung, Fotoanalyse 1924, dann die übrigen Farbwelten
-  const ncsChip=chips.querySelector('.chip-ncs'); chips.prepend(b); if(ncsChip) chips.prepend(ncsChip);
+  const ncsChip=chips.querySelector('.chip-ncs'); if(ncsChip) chips.prepend(ncsChip); chips.prepend(b);
   // „Nächste →“ folgt der Reihenfolge der Farbfelder
   const oldNext=document.getElementById('cwNext'), nx=oldNext.cloneNode(true); oldNext.replaceWith(nx);
   nx.addEventListener('click',()=>{const all=[...chips.querySelectorAll('.chip')]; const i=all.findIndex(c=>c.getAttribute('aria-pressed')==='true'); all[(i+1)%all.length].click();});
@@ -1660,8 +1733,8 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
   const setGo=()=>{const g=b.querySelector('.t-go'); g.textContent=b.getAttribute('aria-pressed')==='true'?'● Aktiv':'Ansehen →';};
   new MutationObserver(setGo).observe(b,{attributes:true,attributeFilter:['aria-pressed']});
   function applyFa(scroll){
-    window.__applyPal&&window.__applyPal(PAL,NAME); window.__mixSync&&window.__mixSync('fa');
-    const cc=document.getElementById('cwCount'); if(cc) cc.textContent='02 / 05';
+    window.__setCw&&window.__setCw('varB'); window.__mixSync&&window.__mixSync('fa');
+    const cc=document.getElementById('cwCount'); if(cc) cc.textContent='01 / 05';
     b.setAttribute('aria-pressed','true');
     if(scroll) document.getElementById('room3d').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
   }
@@ -1673,10 +1746,10 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
   const card=document.createElement('article'); card.className='card card-fa'; card.dataset.fa='1';
   card.innerHTML='<img src="img/fa-detail-farbe.jpg" alt="Ausschnitt aus dem Foto von 1924 in der Farbigkeit der Fotoanalyse" loading="lazy" width="760" height="954">'+
     '<div class="strip" aria-hidden="true">'+[0,3,4,6,9,11].map(i=>'<i style="background:'+PAL[i]+'"></i>').join('')+'</div>'+
-    '<h4>Variante B – Fotoanalyse</h4><p>Ochsenblutrot als Grund, Schwarzbraun, Resedagrün, Chamois. Hergeleitet aus den Grauwerten des Fotos.</p>'+
+    '<h4>Variante A – Fotoanalyse</h4><p>Ochsenblutrot als Grund, Schwarzbraun, Resedagrün, Chamois. Hergeleitet aus den Grauwerten des Fotos.</p>'+
     '<ul class="vals vals-fa"></ul><button type="button" class="cta">Im ganzen Raum ansehen →</button>';
   const grid=document.getElementById('cmpGrid'), ncsCard=grid.querySelector('.card-ncs');
-  if(ncsCard) ncsCard.after(card); else grid.prepend(card);
+  if(ncsCard) ncsCard.before(card); else grid.prepend(card);
   let mode='rgb';
   function renderCard(){
     card.querySelector('.vals-fa').innerHTML=ROLES.map(([k,n],i)=>{const h=PAL[i]; let v;
@@ -1693,10 +1766,12 @@ document.querySelectorAll('.cw-chips .chip').forEach(b=>{const upd=()=>{const g=
 })();
 
 window.__mixTrack&&window.__mixTrack();
+// Start mit Variante A (neue gemalte Raumflächen)
+{ const c=document.querySelector('#cwChips .chip-fa'); if(c) c.click(); }
 
 // Station 6: Vergleichsregler Original / Rekonstruktion
-(function(){const box=document.getElementById('faCmp'); if(!box) return; const r=box.querySelector('input');
-  const set=()=>box.style.setProperty('--p',r.value+'%'); r.addEventListener('input',set); set();})();
+['faCmp','vaCmp','vbCmp'].forEach(id=>{const box=document.getElementById(id); if(!box) return; const r=box.querySelector('input');
+  const set=()=>box.style.setProperty('--p',r.value+'%'); r.addEventListener('input',set); set();});
 </script>
 
 
